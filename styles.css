@@ -13,8 +13,8 @@
   /* HSL color mode */
   --trans: 0.388;
   --first-color: #000000;
-  --first-color-second:rgb(0, 0, 0);
-  --first-color-alt:  var(--first-color);
+  --first-color-second: rgb(0, 0, 0);
+  --first-color-alt: var(--first-color);
   --first-color-lighter: var(--first-color);
   --title-color: hsl(var(--hue-color), 8%, 15%);
   --text-color: hsl(var(--hue-color), 8%, 45%);
@@ -54,10 +54,15 @@
   --z-modal: 100;
 }
 
-
 .back {
-  background-color: var(--first-color);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  border-radius: 50% !important;
+  border: 4px solid var(--first-color) !important;
+  box-shadow: 0 8px 32px rgba(88, 172, 220, 0.3) !important;
+  transition: all 0.3s ease !important;
+  width: 300px !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 /* Font size for large devices */
 
@@ -433,7 +438,6 @@ header {
   background-color: rgba(255, 255, 255, 0);
   border: 2px solid var(--first-color-alt);
   color: var(--first-color-alt);
-  
 }
 
 .button__icon {
@@ -586,12 +590,10 @@ header {
 }
 .qualification__subtitle a {
   text-decoration: none;
-  color: var(--first-color)
-
+  color: var(--first-color);
 }
 .qualification__subtitle a:hover {
-  color: var(--text-color-light)
-
+  color: var(--text-color-light);
 }
 
 .qualification__calender {
@@ -663,7 +665,7 @@ header {
 .services__button {
   cursor: pointer;
   font-size: var(--small-font-size);
-  padding:5px
+  padding: 5px;
 }
 
 .services__button:hover .button__icon {
@@ -844,7 +846,7 @@ header {
 }
 .contact__subtitle a {
   text-decoration: none;
-  color: var(--text-color-light)
+  color: var(--text-color-light);
 }
 .contact__subtitle a:hover {
   color: var(--first-color);
@@ -931,7 +933,6 @@ header {
 }
 .scrollup:hover {
   background-color: var(--first-color-alt);
-
 }
 .scrollup__icon {
   font-size: 1.5rem;
