@@ -172,6 +172,14 @@ function scrollActive() {
 }
 window.addEventListener("scroll", scrollActive);
 
+// Highlight home section on page load
+window.addEventListener("load", () => {
+  const homeLink = document.querySelector(".nav__menu a[href='#home']");
+  if (homeLink) {
+    homeLink.classList.add("active-link");
+  }
+});
+
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
   const nav = document.getElementById("header");
