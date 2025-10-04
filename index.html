@@ -451,343 +451,181 @@
       </div>
     </section>
 
-    <!--==================== PORTFOLIO ====================-->
-
-    <section class="portfolio section" id="portfolio">
-      <h2 class="section__title">Projects</h2>
-      <span class="section__subtitle">Some of the projects I've done</span>
-
-      <div
-        class="portfolio__container container swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-css-mode"
-      >
-        <div
-          class="swiper-wrapper"
-          id="swiper-wrapper-b54064b10610292e54"
-          aria-live="polite"
+    <!--==================== PROJECTS ====================-->
+    <section class="projects section fade-in" id="Projects">
+      <div class="projects__container container">
+        <h2 class="section__title">MY PROJECTS</h2>
+        <span class="section__subtitle"
+          >Innovative Solutions & Creative Implementations</span
         >
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-duplicate"
-            data-swiper-slide-index="6"
-            style="width: 768px"
-            role="group"
-            aria-label="1 / 9"
-          >
-            <img
-              src="assets/img/portfolio/enlistment.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">CITE ONE</h3>
-              <p class="portfolio__description">
-                Online Enlistment System<br />
-                -Manage Employee/Course/Subject/Section <br />
-                -Manage Enrollment Forms <br />
-                -SMS for when enrollement has been approved<br />
-              </p>
-              <a
-                href="https://github.com/makkunii/enlistment"
-                target="_blank"
-                class="button button--flex button--small portfolio__button"
-              >
-                View Code
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
+
+        <div class="projects__slider-container container swiper">
+          <div class="swiper-wrapper">
+            <!-- Project 1 - QR Code Generator -->
+            <div class="swiper-slide">
+              <div class="project__card">
+                <div class="project__badge">
+                  <i class="uil uil-qrcode-scan"></i>
+                </div>
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/Screenshot 2025-03-30 132832.png"
+                    alt="QR Code Generator"
+                    class="project__image"
+                  />
+                  <div class="project__overlay"></div>
+                </div>
+                <div class="project__info">
+                  <h3 class="project__title">QR Code Generator</h3>
+                  <p class="project__subtitle">Utility Web Application</p>
+                  <div class="project__description">
+                    A sleek and efficient QR code generator that creates
+                    high-quality QR codes for various data types including URLs,
+                    text, and contact information.
+                  </div>
+                  <div class="project__tech">
+                    <span class="project__tech-item">HTML5</span>
+                    <span class="project__tech-item">CSS3</span>
+                    <span class="project__tech-item">JavaScript</span>
+                  </div>
+                  <div class="project__actions">
+                    <a
+                      href="https://cjaayy.github.io/QR-Code-Generator/"
+                      target="_blank"
+                      class="project__btn"
+                    >
+                      <i
+                        class="uil uil-external-link-alt project__btn-icon"
+                      ></i>
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/cjaayy/QR-Code-Generator"
+                      target="_blank"
+                      class="project__btn project__btn--secondary"
+                    >
+                      <i class="uil uil-github project__btn-icon"></i>
+                      View Code
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <!--==================== PORTFOLIO 1====================-->
-          <div
-            class="portfolio__content grid swiper-slide"
-            data-swiper-slide-index="0"
-            style="width: 768px"
-            role="group"
-            aria-label="2 / 9"
-          >
-            <img
-              src="assets/img/portfolio/youtube_downloader.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Youtube Downloader</h3>
-              <p class="portfolio__description">
-                A Youtube downloader/converter using Python Tkinter.
-              </p>
-              <a
-                href="https://github.com/makkunii/youtube-converter-python"
-                class="button button--flex button--small portfolio__button"
-              >
-                View Code
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
+
+            <!-- Project 2 - Word Counter -->
+            <div class="swiper-slide">
+              <div class="project__card">
+                <div class="project__badge">
+                  <i class="uil uil-edit-alt"></i>
+                </div>
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/Screenshot 2025-03-30 130224.png"
+                    alt="Word Counter"
+                    class="project__image"
+                  />
+                  <div class="project__overlay"></div>
+                </div>
+                <div class="project__info">
+                  <h3 class="project__title">Word Counter</h3>
+                  <p class="project__subtitle">Text Analysis Tool</p>
+                  <div class="project__description">
+                    A comprehensive word counter application that analyzes text
+                    for word count, character count, reading time, and provides
+                    detailed text statistics.
+                  </div>
+                  <div class="project__tech">
+                    <span class="project__tech-item">HTML5</span>
+                    <span class="project__tech-item">CSS3</span>
+                    <span class="project__tech-item">JavaScript</span>
+                  </div>
+                  <div class="project__actions">
+                    <a
+                      href="https://cjaayy.github.io/Word-Counter/"
+                      target="_blank"
+                      class="project__btn"
+                    >
+                      <i
+                        class="uil uil-external-link-alt project__btn-icon"
+                      ></i>
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/cjaayy/Word-Counter"
+                      target="_blank"
+                      class="project__btn project__btn--secondary"
+                    >
+                      <i class="uil uil-github project__btn-icon"></i>
+                      View Code
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <!--==================== PORTFOLIO 2====================-->
-          <div
-            class="portfolio__content grid swiper-slide"
-            data-swiper-slide-index="1"
-            style="width: 768px"
-            role="group"
-            aria-label="3 / 9"
-          >
-            <img
-              src="assets/img/portfolio/qr-code.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Qr Code Generator</h3>
-              <p class="portfolio__description">
-                A QR code generator with color customization.
-              </p>
-              <a
-                href="https://makkunii.github.io/qr-generator-react/"
-                target="_blank"
-                class="button button--flex button--small portfolio__button"
-              >
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 3====================-->
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-prev"
-            data-swiper-slide-index="2"
-            style="width: 768px"
-            role="group"
-            aria-label="4 / 9"
-          >
-            <img
-              src="assets/img/portfolio/trb.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Logistic System</h3>
-              <p class="portfolio__description">
-                A multi-system packed into one system, using Laravel as
-                framework
-              </p>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 4====================-->
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-active"
-            data-swiper-slide-index="3"
-            style="width: 768px"
-            role="group"
-            aria-label="5 / 9"
-          >
-            <img
-              src="assets/img/portfolio/expense-tracker.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Budget App</h3>
-              <p class="portfolio__description">
-                Expense Tracker that tracks your income,expense and budget, it
-                uses localstorage to save data
-              </p>
-              <a
-                href="https://makkunii.github.io/money"
-                target="_blank"
-                class="button button--flex button--small portfolio__button"
-              >
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 5====================-->
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-next"
-            data-swiper-slide-index="4"
-            style="width: 768px"
-            role="group"
-            aria-label="6 / 9"
-          >
-            <img
-              src="assets/img/portfolio/to-do-list.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">To Do List</h3>
-              <p class="portfolio__description">
-                A to do list app inspired by the meme to do to do...
-              </p>
-              <a
-                href="https://makkunii.github.io/todolist"
-                target="_blank"
-                class="button button--flex button--small portfolio__button"
-              >
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 6====================-->
-          <div
-            class="portfolio__content grid swiper-slide"
-            data-swiper-slide-index="5"
-            style="width: 768px"
-            role="group"
-            aria-label="7 / 9"
-          >
-            <img
-              src="assets/img/portfolio/mp3.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Mp3 Player</h3>
-              <p class="portfolio__description">
-                Personal Mp3 Player for my own song composition
-              </p>
-              <a
-                href="https://makkunii.github.io/music"
-                target="_blank"
-                class="button button--flex button--small portfolio__button"
-              >
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 7====================-->
-          <div
-            class="portfolio__content grid swiper-slide"
-            data-swiper-slide-index="6"
-            style="width: 768px"
-            role="group"
-            aria-label="8 / 9"
-          >
-            <img
-              src="assets/img/portfolio/enlistment.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">CITE ONE</h3>
-              <p class="portfolio__description">
-                Online Enlistment System<br />
-                -Manage Employee/Course/Subject/Section <br />
-                -Manage Enrollment Forms <br />
-                -SMS for when enrollement has been approved<br />
-              </p>
-              <a
-                href="https://github.com/makkunii/enlistment"
-                target="_blank"
-                class="button button--flex button--small portfolio__button"
-              >
-                View Code
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
+
+            <!-- Project 3 - Chatbot -->
+            <div class="swiper-slide">
+              <div class="project__card">
+                <div class="project__badge">
+                  <i class="uil uil-comment-dots"></i>
+                </div>
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/Screenshot 2025-03-30 130322.png"
+                    alt="Chatbot Application"
+                    class="project__image"
+                  />
+                  <div class="project__overlay"></div>
+                </div>
+                <div class="project__info">
+                  <h3 class="project__title">Chatbot Application</h3>
+                  <p class="project__subtitle">Real-time Chat Interface</p>
+                  <div class="project__description">
+                    An interactive chatbot application with real-time messaging
+                    capabilities, user-friendly interface, and modern chat
+                    features.
+                  </div>
+                  <div class="project__tech">
+                    <span class="project__tech-item">HTML5</span>
+                    <span class="project__tech-item">CSS3</span>
+                    <span class="project__tech-item">JavaScript</span>
+                  </div>
+                  <div class="project__actions">
+                    <a
+                      href="https://cjaayy.github.io/Chatbox/"
+                      target="_blank"
+                      class="project__btn"
+                    >
+                      <i
+                        class="uil uil-external-link-alt project__btn-icon"
+                      ></i>
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/cjaayy/Chatbox"
+                      target="_blank"
+                      class="project__btn project__btn--secondary"
+                    >
+                      <i class="uil uil-github project__btn-icon"></i>
+                      View Code
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-duplicate"
-            data-swiper-slide-index="0"
-            style="width: 768px"
-            role="group"
-            aria-label="9 / 9"
-          >
-            <img
-              src="assets/img/portfolio/youtube_downloader.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Youtube Downloader</h3>
-              <p class="portfolio__description">
-                A Youtube downloader/converter using Python Tkinter.
-              </p>
-              <a
-                href="https://github.com/makkunii/youtube-converter-python"
-                class="button button--flex button--small portfolio__button"
-              >
-                View Code
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
+          <!-- Add arrows -->
+          <div class="swiper-button-next">
+            <i class="uil uil-angle-right-b swiper-projects-icon"></i>
           </div>
-        </div>
+          <div class="swiper-button-prev">
+            <i class="uil uil-angle-left-b swiper-projects-icon"></i>
+          </div>
 
-        <!-- Add arrows -->
-        <div
-          class="swiper-button-next"
-          tabindex="0"
-          role="button"
-          aria-label="Next slide"
-          aria-controls="swiper-wrapper-b54064b10610292e54"
-        >
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination projects-pagination"></div>
         </div>
-        <div
-          class="swiper-button-prev"
-          tabindex="0"
-          role="button"
-          aria-label="Previous slide"
-          aria-controls="swiper-wrapper-b54064b10610292e54"
-        >
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-        </div>
-
-        <!-- Add Pagination -->
-        <div
-          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-        >
-          <span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 1"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 2"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 3"
-          ></span
-          ><span
-            class="swiper-pagination-bullet swiper-pagination-bullet-active"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 4"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 5"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 6"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 7"
-          ></span>
-        </div>
-        <span
-          class="swiper-notification"
-          aria-live="assertive"
-          aria-atomic="true"
-        ></span>
       </div>
     </section>
 
@@ -865,7 +703,7 @@
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>C/C++</p>
+                  <p>C++</p>
                 </li>
               </ul>
             </div>
@@ -874,254 +712,232 @@
       </div>
     </section>
 
-    <!--==================== Certificates ====================-->
-
-    <div class="" id="Cetificate">
-      <h2 class="section__title">Certificates</h2>
-      <span class="section__subtitle">Awards &amp; Academic Certificates</span>
-
-      <div
-        class="portfolio__container container swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-css-mode"
-      >
-        <div
-          class="swiper-wrapper"
-          id="swiper-wrapper-1be4041351f3a2d0"
-          aria-live="polite"
+    <!--==================== CERTIFICATES ====================-->
+    <section class="certificates section fade-in" id="Cetificate">
+      <div class="certificates__container container">
+        <h2 class="section__title">CERTIFICATES</h2>
+        <span class="section__subtitle"
+          >Professional Achievements & Learning Milestones</span
         >
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev"
-            data-swiper-slide-index="3"
-            style="width: 768px"
-            role="group"
-            aria-label="1 / 6"
-          >
-            <img
-              src="assets/img/portfolio/0013.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0014.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0015.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/css-cert.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-          </div>
-          <!--==================== PORTFOLIO 1====================-->
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-duplicate-active"
-            data-swiper-slide-index="0"
-            style="width: 768px"
-            role="group"
-            aria-label="2 / 6"
-          >
-            <img
-              src="assets/img/portfolio/0001.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0002.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0003.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0004.jpg"
-              alt=""
-              class="portfolio__img"
-            />
+
+        <div class="certificates__slider-container container swiper">
+          <div class="swiper-wrapper">
+            <!-- Certificate 1 -->
+            <div class="swiper-slide">
+              <div class="certificate__card">
+                <div class="certificate__badge">
+                  <i class="uil uil-award"></i>
+                </div>
+                <div class="certificate__image-container">
+                  <img
+                    src="assets/Certificates/Certificate_of_Completion/Certificate_of_Completion_page-0001.jpg"
+                    alt="Certificate of Completion"
+                    class="certificate__image"
+                  />
+                  <div class="certificate__overlay"></div>
+                </div>
+                <div class="certificate__info">
+                  <h3 class="certificate__title">Introduction to CSS</h3>
+                  <p class="certificate__subtitle">Certificate of Completion</p>
+                  <div class="certificate__date">2021</div>
+                  <div class="certificate__actions">
+                    <a
+                      href="assets/Certificates/Certificate_of_Completion/Certificate_of_Completion_page-0001.jpg"
+                      target="_blank"
+                      class="certificate__btn"
+                    >
+                      <i class="uil uil-eye certificate__btn-icon"></i>
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="swiper-slide">
+              <div class="certificate__card">
+                <div class="certificate__badge">
+                  <i class="uil uil-trophy"></i>
+                </div>
+                <div class="certificate__image-container">
+                  <img
+                    src="assets/Certificates/Certificate_of_Completion-1/Certificate_of_Completion (1)_page-0001.jpg"
+                    alt="Advanced Programming Certificate"
+                    class="certificate__image"
+                  />
+                  <div class="certificate__overlay"></div>
+                </div>
+                <div class="certificate__info">
+                  <h3 class="certificate__title">
+                    Setting Up Computer Networks
+                  </h3>
+                  <p class="certificate__subtitle">Certificate of Completion</p>
+                  <div class="certificate__date">2022</div>
+                  <div class="certificate__actions">
+                    <a
+                      href="assets/Certificates/Certificate_of_Completion-1/Certificate_of_Completion (1)_page-0001.jpg"
+                      target="_blank"
+                      class="certificate__btn"
+                    >
+                      <i class="uil uil-eye certificate__btn-icon"></i>
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="swiper-slide">
+              <div class="certificate__card">
+                <div class="certificate__badge">
+                  <i class="uil uil-medal"></i>
+                </div>
+                <div class="certificate__image-container">
+                  <img
+                    src="assets/Certificates/Certificate_of_Completion_NEW/Certificate_of_Completion_NEW_page-0001.jpg"
+                    alt="Web Development Certificate"
+                    class="certificate__image"
+                  />
+                  <div class="certificate__overlay"></div>
+                </div>
+                <div class="certificate__info">
+                  <h3 class="certificate__title">
+                    Installing and Configuring Computer Systems
+                  </h3>
+                  <p class="certificate__subtitle">Certificate of Completion</p>
+                  <div class="certificate__date">2021</div>
+                  <div class="certificate__actions">
+                    <a
+                      href="assets/Certificates/Certificate_of_Completion_NEW/Certificate_of_Completion_NEW_page-0001.jpg"
+                      target="_blank"
+                      class="certificate__btn"
+                    >
+                      <i class="uil uil-eye certificate__btn-icon"></i>
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="swiper-slide">
+              <div class="certificate__card">
+                <div class="certificate__badge">
+                  <i class="uil uil-star"></i>
+                </div>
+                <div class="certificate__image-container">
+                  <img
+                    src="assets/Certificates/Certificate_of_Completion_NEW-1/Certificate_of_Completion_NEW (1)_page-0001.jpg"
+                    alt="Advanced Web Technologies Certificate"
+                    class="certificate__image"
+                  />
+                  <div class="certificate__overlay"></div>
+                </div>
+                <div class="certificate__info">
+                  <h3 class="certificate__title">
+                    Setting Up Computer Servers
+                  </h3>
+                  <p class="certificate__subtitle">Certificate of Completion</p>
+                  <div class="certificate__date">2022</div>
+                  <div class="certificate__actions">
+                    <a
+                      href="assets/Certificates/Certificate_of_Completion_NEW-1/Certificate_of_Completion_NEW (1)_page-0001.jpg"
+                      target="_blank"
+                      class="certificate__btn"
+                    >
+                      <i class="uil uil-eye certificate__btn-icon"></i>
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="swiper-slide">
+              <div class="certificate__card">
+                <div class="certificate__badge">
+                  <i class="uil uil-graduation-cap"></i>
+                </div>
+                <div class="certificate__image-container">
+                  <img
+                    src="assets/Certificates/Certificate_of_Completion_NEW-2/Certificate_of_Completion_NEW (2)_page-0001.jpg"
+                    alt="Professional Development Certificate"
+                    class="certificate__image"
+                  />
+                  <div class="certificate__overlay"></div>
+                </div>
+                <div class="certificate__info">
+                  <h3 class="certificate__title">
+                    Maintaining Computer Systems and Networks
+                  </h3>
+                  <p class="certificate__subtitle">Certificate of Completion</p>
+                  <div class="certificate__date">2022</div>
+                  <div class="certificate__actions">
+                    <a
+                      href="assets/Certificates/Certificate_of_Completion_NEW-2/Certificate_of_Completion_NEW (2)_page-0001.jpg"
+                      target="_blank"
+                      class="certificate__btn"
+                    >
+                      <i class="uil uil-eye certificate__btn-icon"></i>
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="swiper-slide">
+              <div class="certificate__card">
+                <div class="certificate__badge">
+                  <i class="uil uil-globe"></i>
+                </div>
+                <div class="certificate__image-container">
+                  <img
+                    src="assets/Certificates/Earth&Shore/1000035889 (1).jpg"
+                    alt="Earth & Shore Certificate"
+                    class="certificate__image"
+                  />
+                  <div class="certificate__overlay"></div>
+                </div>
+                <div class="certificate__info">
+                  <h3 class="certificate__title">
+                    Earth & Shore Tourism Ventures Corp.
+                  </h3>
+                  <p class="certificate__subtitle">Certificate of Completion</p>
+                  <div class="certificate__date">2023</div>
+                  <div class="certificate__actions">
+                    <a
+                      href="assets/Certificates/Earth&Shore/1000035889 (1).jpg"
+                      target="_blank"
+                      class="certificate__btn"
+                    >
+                      <i class="uil uil-eye certificate__btn-icon"></i>
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!--==================== PORTFOLIO 2====================-->
-          <div
-            class="portfolio__content grid swiper-slide"
-            data-swiper-slide-index="1"
-            style="width: 768px"
-            role="group"
-            aria-label="3 / 6"
-          >
-            <img
-              src="assets/img/portfolio/0005.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0006.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0007.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0008.jpg"
-              alt=""
-              class="portfolio__img"
-            />
+          <!-- Add arrows -->
+          <div class="swiper-button-next">
+            <i class="uil uil-angle-right-b project-arrow-animate"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="uil uil-angle-left-b project-arrow-animate"></i>
           </div>
 
-          <!--==================== PORTFOLIO 3====================-->
-          <div
-            class="portfolio__content grid swiper-slide"
-            data-swiper-slide-index="2"
-            style="width: 768px"
-            role="group"
-            aria-label="4 / 6"
-          >
-            <img
-              src="assets/img/portfolio/0009.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0010.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0011.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0012.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-          </div>
-
-          <!--==================== PORTFOLIO 4====================-->
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-prev swiper-slide-duplicate-next"
-            data-swiper-slide-index="3"
-            style="width: 768px"
-            role="group"
-            aria-label="5 / 6"
-          >
-            <img
-              src="assets/img/portfolio/0013.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0014.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0015.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/css-cert.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-          </div>
-
-          <div
-            class="portfolio__content grid swiper-slide swiper-slide-duplicate swiper-slide-active"
-            data-swiper-slide-index="0"
-            style="width: 768px"
-            role="group"
-            aria-label="6 / 6"
-          >
-            <img
-              src="assets/img/portfolio/0001.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0002.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0003.png"
-              alt=""
-              class="portfolio__img"
-            />
-            <img
-              src="assets/img/portfolio/0004.jpg"
-              alt=""
-              class="portfolio__img"
-            />
-          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
-
-        <!-- Add arrows -->
-        <div
-          class="swiper-button-next"
-          tabindex="0"
-          role="button"
-          aria-label="Next slide"
-          aria-controls="swiper-wrapper-1be4041351f3a2d0"
-        >
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-        </div>
-        <div
-          class="swiper-button-prev"
-          tabindex="0"
-          role="button"
-          aria-label="Previous slide"
-          aria-controls="swiper-wrapper-1be4041351f3a2d0"
-        >
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-        </div>
-
-        <!-- Add Pagination -->
-        <div
-          class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-        >
-          <span
-            class="swiper-pagination-bullet swiper-pagination-bullet-active"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 1"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 2"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 3"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 4"
-          ></span>
-        </div>
-        <span
-          class="swiper-notification"
-          aria-live="assertive"
-          aria-atomic="true"
-        ></span>
       </div>
-    </div>
+    </section>
 
     <!--==================== CONTACT ME ====================-->
 
@@ -1228,9 +1044,6 @@
           <ul class="footer__links">
             <li>
               <a href="#services" class="footer__link">Services</a>
-            </li>
-            <li>
-              <a href="#portfolio" class="footer__link">Portfolio</a>
             </li>
             <li>
               <a href="#contact" class="footer__link">Contact Me</a>

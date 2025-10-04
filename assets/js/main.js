@@ -89,6 +89,64 @@ let swiper = new Swiper(".portfolio__container", {
   },
 });
 
+/*==================== PROJECTS SWIPER ====================*/
+
+let projectsSwiper = new Swiper(".projects__slider-container", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".projects__slider-container .swiper-button-next",
+    prevEl: ".projects__slider-container .swiper-button-prev",
+  },
+  pagination: {
+    el: ".projects__slider-container .swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  effect: "slide",
+  speed: 700,
+  watchOverflow: true,
+  observer: true,
+  observeParents: true,
+});
+
+/*==================== CERTIFICATES SWIPER ====================*/
+
+let certificatesSwiper = new Swiper(".certificates__slider-container", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".certificates__slider-container .swiper-button-next",
+    prevEl: ".certificates__slider-container .swiper-button-prev",
+  },
+  pagination: {
+    el: ".certificates__slider-container .swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  effect: "slide",
+  speed: 700,
+  watchOverflow: true,
+  observer: true,
+  observeParents: true,
+});
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
 const sections = document.querySelectorAll("section[id]");
