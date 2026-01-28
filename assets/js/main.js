@@ -107,15 +107,34 @@ let projectsSwiper = new Swiper(".projects__slider-container", {
     dynamicBullets: true,
   },
   autoplay: {
-    delay: 5000,
+    delay: 6000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
   effect: "slide",
-  speed: 700,
+  speed: 800,
   watchOverflow: true,
   observer: true,
   observeParents: true,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  a11y: {
+    prevSlideMessage: "Previous project",
+    nextSlideMessage: "Next project",
+  },
+});
+
+// Pause autoplay when hovering over project cards
+const projectCards = document.querySelectorAll(".project__card");
+projectCards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    projectsSwiper.autoplay.stop();
+  });
+  card.addEventListener("mouseleave", () => {
+    projectsSwiper.autoplay.start();
+  });
 });
 
 /*==================== CERTIFICATES SWIPER ====================*/
@@ -218,10 +237,10 @@ const getCurrentIcon = () =>
 if (selectedTheme) {
   // if theme selected by user previously then we add/remove classes again based on localStorage
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
+    darkTheme,
   );
   themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme
+    iconTheme,
   );
 }
 //if initially there is no local storage ie. user has not made a choice and this is first time loading

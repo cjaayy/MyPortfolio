@@ -456,11 +456,33 @@
           >Innovative Solutions & Creative Implementations</span
         >
 
+        <!-- Project Stats Summary -->
+        <div class="projects__stats">
+          <div class="projects__stat-item">
+            <i class="uil uil-folder-open"></i>
+            <span class="projects__stat-number">3</span>
+            <span class="projects__stat-label">Projects</span>
+          </div>
+          <div class="projects__stat-item">
+            <i class="uil uil-check-circle"></i>
+            <span class="projects__stat-number">3</span>
+            <span class="projects__stat-label">Completed</span>
+          </div>
+          <div class="projects__stat-item">
+            <i class="uil uil-star"></i>
+            <span class="projects__stat-number">1</span>
+            <span class="projects__stat-label">Featured</span>
+          </div>
+        </div>
+
         <div class="projects__slider-container container swiper">
           <div class="swiper-wrapper">
-            <!-- Project 1 - QR Code Generator -->
+            <!-- Project 1 - QR Code Generator (Featured) -->
             <div class="swiper-slide">
-              <div class="project__card">
+              <div class="project__card project__card--featured">
+                <div class="project__status project__status--featured">
+                  <i class="uil uil-star"></i> Featured
+                </div>
                 <div class="project__badge">
                   <i class="uil uil-qrcode-scan"></i>
                 </div>
@@ -469,27 +491,53 @@
                     src="assets/Projects/Screenshot 2025-03-30 132832.png"
                     alt="QR Code Generator"
                     class="project__image"
+                    loading="lazy"
                   />
-                  <div class="project__overlay"></div>
+                  <div class="project__overlay">
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="project__info">
-                  <h3 class="project__title">QR Code Generator</h3>
-                  <p class="project__subtitle">Utility Web Application</p>
+                  <div class="project__header">
+                    <h3 class="project__title">QR Code Generator</h3>
+                    <span class="project__category">Utility</span>
+                  </div>
+                  <p class="project__subtitle">Web Application</p>
                   <div class="project__description">
                     A sleek and efficient QR code generator that creates
                     high-quality QR codes for various data types including URLs,
                     text, and contact information.
                   </div>
                   <div class="project__tech">
-                    <span class="project__tech-item">HTML5</span>
-                    <span class="project__tech-item">CSS3</span>
-                    <span class="project__tech-item">JavaScript</span>
+                    <span
+                      class="project__tech-item"
+                      data-tooltip="Markup Language"
+                    >
+                      <i class="uil uil-html5"></i> HTML5
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Styling">
+                      <i class="uil uil-css3-simple"></i> CSS3
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Programming">
+                      <i class="uil uil-java-script"></i> JavaScript
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2025
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-check"></i> Completed
+                    </span>
                   </div>
                   <div class="project__actions">
                     <a
                       href="https://cjaayy.github.io/QR-Code-Generator/"
                       target="_blank"
-                      class="project__btn"
+                      class="project__btn project__btn--primary"
                     >
                       <i
                         class="uil uil-external-link-alt project__btn-icon"
@@ -506,12 +554,16 @@
                     </a>
                   </div>
                 </div>
+                <div class="project__glow"></div>
               </div>
             </div>
 
             <!-- Project 2 - Word Counter -->
             <div class="swiper-slide">
               <div class="project__card">
+                <div class="project__status project__status--completed">
+                  <i class="uil uil-check-circle"></i> Completed
+                </div>
                 <div class="project__badge">
                   <i class="uil uil-edit-alt"></i>
                 </div>
@@ -520,27 +572,53 @@
                     src="assets/Projects/Screenshot 2025-03-30 130224.png"
                     alt="Word Counter"
                     class="project__image"
+                    loading="lazy"
                   />
-                  <div class="project__overlay"></div>
+                  <div class="project__overlay">
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="project__info">
-                  <h3 class="project__title">Word Counter</h3>
-                  <p class="project__subtitle">Text Analysis Tool</p>
+                  <div class="project__header">
+                    <h3 class="project__title">Word Counter</h3>
+                    <span class="project__category">Tool</span>
+                  </div>
+                  <p class="project__subtitle">Text Analysis Application</p>
                   <div class="project__description">
                     A comprehensive word counter application that analyzes text
                     for word count, character count, reading time, and provides
                     detailed text statistics.
                   </div>
                   <div class="project__tech">
-                    <span class="project__tech-item">HTML5</span>
-                    <span class="project__tech-item">CSS3</span>
-                    <span class="project__tech-item">JavaScript</span>
+                    <span
+                      class="project__tech-item"
+                      data-tooltip="Markup Language"
+                    >
+                      <i class="uil uil-html5"></i> HTML5
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Styling">
+                      <i class="uil uil-css3-simple"></i> CSS3
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Programming">
+                      <i class="uil uil-java-script"></i> JavaScript
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2025
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-check"></i> Completed
+                    </span>
                   </div>
                   <div class="project__actions">
                     <a
                       href="https://cjaayy.github.io/Word-Counter/"
                       target="_blank"
-                      class="project__btn"
+                      class="project__btn project__btn--primary"
                     >
                       <i
                         class="uil uil-external-link-alt project__btn-icon"
@@ -557,12 +635,16 @@
                     </a>
                   </div>
                 </div>
+                <div class="project__glow"></div>
               </div>
             </div>
 
             <!-- Project 3 - Chatbot -->
             <div class="swiper-slide">
               <div class="project__card">
+                <div class="project__status project__status--completed">
+                  <i class="uil uil-check-circle"></i> Completed
+                </div>
                 <div class="project__badge">
                   <i class="uil uil-comment-dots"></i>
                 </div>
@@ -571,11 +653,20 @@
                     src="assets/Projects/Screenshot 2025-03-30 130322.png"
                     alt="Chatbot Application"
                     class="project__image"
+                    loading="lazy"
                   />
-                  <div class="project__overlay"></div>
+                  <div class="project__overlay">
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="project__info">
-                  <h3 class="project__title">Chatbot Application</h3>
+                  <div class="project__header">
+                    <h3 class="project__title">Chatbot Application</h3>
+                    <span class="project__category">Interactive</span>
+                  </div>
                   <p class="project__subtitle">Real-time Chat Interface</p>
                   <div class="project__description">
                     An interactive chatbot application with real-time messaging
@@ -583,15 +674,32 @@
                     features.
                   </div>
                   <div class="project__tech">
-                    <span class="project__tech-item">HTML5</span>
-                    <span class="project__tech-item">CSS3</span>
-                    <span class="project__tech-item">JavaScript</span>
+                    <span
+                      class="project__tech-item"
+                      data-tooltip="Markup Language"
+                    >
+                      <i class="uil uil-html5"></i> HTML5
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Styling">
+                      <i class="uil uil-css3-simple"></i> CSS3
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Programming">
+                      <i class="uil uil-java-script"></i> JavaScript
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2025
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-check"></i> Completed
+                    </span>
                   </div>
                   <div class="project__actions">
                     <a
                       href="https://cjaayy.github.io/Chatbox/"
                       target="_blank"
-                      class="project__btn"
+                      class="project__btn project__btn--primary"
                     >
                       <i
                         class="uil uil-external-link-alt project__btn-icon"
@@ -608,6 +716,7 @@
                     </a>
                   </div>
                 </div>
+                <div class="project__glow"></div>
               </div>
             </div>
           </div>
@@ -924,10 +1033,10 @@
 
           <!-- Add arrows -->
           <div class="swiper-button-next">
-            <i class="uil uil-angle-right-b project-arrow-animate"></i>
+            <i class="uil uil-angle-right-b swiper-certificates-icon"></i>
           </div>
           <div class="swiper-button-prev">
-            <i class="uil uil-angle-left-b project-arrow-animate"></i>
+            <i class="uil uil-angle-left-b swiper-certificates-icon"></i>
           </div>
 
           <!-- Add Pagination -->
