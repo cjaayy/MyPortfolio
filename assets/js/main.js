@@ -106,11 +106,6 @@ let projectsSwiper = new Swiper(".projects__slider-container", {
     clickable: true,
     dynamicBullets: true,
   },
-  autoplay: {
-    delay: 6000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
   effect: "slide",
   speed: 800,
   watchOverflow: true,
@@ -124,17 +119,6 @@ let projectsSwiper = new Swiper(".projects__slider-container", {
     prevSlideMessage: "Previous project",
     nextSlideMessage: "Next project",
   },
-});
-
-// Pause autoplay when hovering over project cards
-const projectCards = document.querySelectorAll(".project__card");
-projectCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    projectsSwiper.autoplay.stop();
-  });
-  card.addEventListener("mouseleave", () => {
-    projectsSwiper.autoplay.start();
-  });
 });
 
 /*==================== CERTIFICATES SWIPER ====================*/
@@ -153,11 +137,6 @@ let certificatesSwiper = new Swiper(".certificates__slider-container", {
     el: ".certificates__slider-container .swiper-pagination",
     clickable: true,
     dynamicBullets: true,
-  },
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
   },
   effect: "slide",
   speed: 700,
@@ -266,4 +245,24 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+});
+
+/*==================== MOBILE PROJECT TOGGLES ====================*/
+const projectToggleBtns = document.querySelectorAll(".project__toggle-btn");
+
+projectToggleBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.target;
+    const projectCard = btn.closest(".project__card");
+
+    if (target === "description") {
+      const description = projectCard.querySelector(".project__description");
+      description.classList.toggle("show");
+      btn.classList.toggle("active");
+    } else if (target === "tech") {
+      const tech = projectCard.querySelector(".project__tech");
+      tech.classList.toggle("show");
+      btn.classList.toggle("active");
+    }
+  });
 });
