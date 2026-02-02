@@ -956,7 +956,7 @@ header {
 }
 
 .qualification__container {
-  max-width: 900px;
+  max-width: 650px;
   overflow: visible;
 }
 
@@ -1043,6 +1043,9 @@ header {
   gap: 1.5rem;
   position: relative;
   padding-left: 30px;
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .qualification__timeline::before {
@@ -1067,6 +1070,7 @@ header {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: 1px solid transparent;
+  max-width: 500px;
 }
 
 .qualification__card::before {
