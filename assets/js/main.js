@@ -251,7 +251,31 @@ themeButton.addEventListener("click", () => {
 const projectToggleBtns = document.querySelectorAll(".project__toggle-btn");
 
 projectToggleBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
+  // Prevent touch events from triggering swiper
+  btn.addEventListener(
+    "touchstart",
+    (e) => {
+      e.stopPropagation();
+    },
+    { passive: true },
+  );
+
+  btn.addEventListener(
+    "touchend",
+    (e) => {
+      e.stopPropagation();
+    },
+    { passive: true },
+  );
+
+  btn.addEventListener("mousedown", (e) => {
+    e.stopPropagation();
+  });
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const target = btn.dataset.target;
     const projectCard = btn.closest(".project__card");
 
@@ -265,4 +289,17 @@ projectToggleBtns.forEach((btn) => {
       btn.classList.toggle("active");
     }
   });
+});
+
+// Auto close tech stack and description on scroll
+window.addEventListener("scroll", () => {
+  const descriptions = document.querySelectorAll(".project__description.show");
+  const techStacks = document.querySelectorAll(".project__tech.show");
+  const activeButtons = document.querySelectorAll(
+    ".project__toggle-btn.active",
+  );
+
+  descriptions.forEach((desc) => desc.classList.remove("show"));
+  techStacks.forEach((tech) => tech.classList.remove("show"));
+  activeButtons.forEach((btn) => btn.classList.remove("active"));
 });

@@ -4252,9 +4252,28 @@ textarea.contact__input {
     padding: 0.4rem 0.8rem !important;
     font-size: 0.8rem !important;
   }
+
+  /* Fix arrows position on mobile */
+  .projects__slider-container .swiper-button-next,
+  .projects__slider-container .swiper-button-prev {
+    top: 120px !important;
+    transform: translateY(0) !important;
+  }
+
+  .projects__slider-container .swiper-button-next:hover,
+  .projects__slider-container .swiper-button-prev:hover {
+    transform: scale(1.1) !important;
+  }
 }
 
 /* Hide mobile toggles on desktop */
 .project__mobile-toggles {
   display: none;
+}
+
+.project__toggle-btn {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
