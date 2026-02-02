@@ -1004,13 +1004,13 @@ header {
   flex-direction: column;
   gap: 1.5rem;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 30px;
 }
 
 .qualification__timeline::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: 4.5px;
   top: 0;
   bottom: 0;
   width: 3px;
@@ -1034,7 +1034,7 @@ header {
 .qualification__card::before {
   content: '';
   position: absolute;
-  left: -2rem;
+  left: -30px;
   top: 1.75rem;
   width: 12px;
   height: 12px;
@@ -1046,7 +1046,6 @@ header {
 }
 
 .qualification__card:hover {
-  transform: translateX(8px);
   box-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
   border-color: var(--first-color);
 }
@@ -1253,7 +1252,12 @@ header {
   }
 
   .qualification__timeline {
-    padding-left: 1.5rem;
+    padding-left: 28px !important;
+  }
+
+  .qualification__timeline::before {
+    left: 4px !important;
+    width: 2px !important;
   }
 
   .qualification__card {
@@ -1262,10 +1266,21 @@ header {
   }
 
   .qualification__card::before {
-    left: -1.5rem;
-    top: 1.5rem;
-    width: 10px;
-    height: 10px;
+    left: -28px !important;
+    top: 1.5rem !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-width: 2px !important;
+    box-shadow: 0 0 0 2px var(--first-color) !important;
+  }
+
+  .qualification__card:hover {
+    transform: none;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .qualification__card:hover::before {
+    transform: none;
   }
 
   .qualification__card-icon {
@@ -2703,16 +2718,23 @@ textarea.contact__input {
     width: 180px;
   }
   .qualification__timeline {
-    padding-left: 1.25rem;
+    padding-left: 26px !important;
+  }
+  .qualification__timeline::before {
+    left: 4px !important;
+    width: 2px !important;
   }
   .qualification__card {
     padding: 1rem;
     gap: 1rem;
   }
   .qualification__card::before {
-    left: -1.25rem;
-    width: 8px;
-    height: 8px;
+    left: -26px !important;
+    top: 1.25rem !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-width: 2px !important;
+    box-shadow: 0 0 0 2px var(--first-color) !important;
   }
   .services__container {
     grid-template-columns: 1fr;
@@ -3384,10 +3406,13 @@ textarea.contact__input {
     gap: 1.5rem;
   }
   .qualification__timeline {
-    padding-left: 2.5rem;
+    padding-left: 30px;
   }
   .qualification__card {
     padding: 2rem;
+  }
+  .qualification__card::before {
+    left: -30px;
   }
   .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: -1.5rem;
@@ -3628,10 +3653,13 @@ textarea.contact__input {
     padding: 0.6rem 1.25rem;
   }
   .qualification__timeline {
-    padding-left: 3rem;
+    padding-left: 30px;
   }
   .qualification__card {
     padding: 2rem 2.5rem;
+  }
+  .qualification__card::before {
+    left: -30px;
   }
 
   .services__container {
