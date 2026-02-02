@@ -1294,19 +1294,34 @@ header {
 /*==================== SERVICES ====================*/
 
 .services__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  grid-template-columns: 1fr;
   padding: 0 1rem;
-  max-width: 100%;
+  max-width: 600px;
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 568px) {
+  .services__container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .services__container {
+    grid-template-columns: 1fr;
+    max-width: 200px;
+  }
+}
+
 .services__content {
   position: relative;
   background-color: var(--container-color);
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1rem 0.75rem 0.75rem 0.75rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
@@ -1315,7 +1330,9 @@ header {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
   box-sizing: border-box;
 }
 
@@ -1350,7 +1367,7 @@ header {
   cursor: pointer;
   font-size: 0.7rem;
   padding: 0;
-  align-self: flex-start;
+  align-self: center;
   margin-top: 0.25rem;
 }
 
@@ -2727,12 +2744,11 @@ textarea.contact__input {
     box-shadow: 0 0 0 2px var(--first-color) !important;
   }
   .services__container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     padding: 0 0.5rem;
     gap: 0.75rem;
-    max-width: 100%;
-    width: 100%;
+    max-width: 600px;
   }
   .services__content {
     padding: 1rem 0.75rem 0.75rem 0.75rem;
@@ -2981,8 +2997,10 @@ textarea.contact__input {
   }
 
   .services__container {
+    grid-template-columns: repeat(3, 1fr);
     padding: 0 0.25rem;
     gap: 0.5rem;
+    max-width: 500px;
   }
 
   .services__content {
@@ -3169,9 +3187,10 @@ textarea.contact__input {
   }
 
   .services__container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     padding: 0;
     gap: 1rem;
+    max-width: 600px;
   }
 
   .services__content {
@@ -3438,9 +3457,10 @@ textarea.contact__input {
   }
 
   .services__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 0;
     gap: 1.5rem;
+    max-width: 650px;
   }
 
   .services__content {
@@ -3653,9 +3673,10 @@ textarea.contact__input {
   }
 
   .services__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 0;
+    max-width: 700px;
   }
 
   .services__icon {
@@ -3804,9 +3825,10 @@ textarea.contact__input {
   }
 
   .services__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 0;
+    max-width: 750px;
   }
 
   .services__content {
