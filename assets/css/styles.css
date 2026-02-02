@@ -201,6 +201,28 @@ img {
   overflow-x: hidden;
 }
 
+/* Section divider */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--text-color-light), transparent);
+}
+
+.section {
+  position: relative;
+}
+
+/* No divider for home section */
+.home.section::before {
+  display: none;
+}
+
 /* Auto height for services and contact to ensure mobile fitting */
 .services.section,
 .contact.section {
@@ -248,6 +270,21 @@ img {
   font-size: clamp(1.25rem, 5vw, var(--h1-font-size));
   padding: 0 0.5rem;
   max-width: 100%;
+  margin-bottom: var(--mb-2);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--first-color), transparent);
+  border-radius: 2px;
 }
 
 .section__subtitle {
