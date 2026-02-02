@@ -2396,6 +2396,8 @@ body.dark-theme .projects__stat-item {
 
 .certificate__actions {
   margin-top: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .certificate__btn {
@@ -2411,7 +2413,6 @@ body.dark-theme .projects__stat-item {
   font-weight: var(--font-medium);
   text-decoration: none;
   transition: all 0.3s ease;
-  align-self: flex-start;
 }
 
 .certificate__btn:hover {
@@ -4276,4 +4277,59 @@ textarea.contact__input {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+/* Mobile Certificates Section Fix */
+@media screen and (max-width: 576px) {
+  .certificates__slider-container {
+    max-width: 100% !important;
+    padding: 0.5rem !important;
+  }
+
+  .certificate__card {
+    padding: 0.75rem !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  .certificate__image-container {
+    height: 160px !important;
+    margin-bottom: 0.5rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .certificate__title {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.25rem !important;
+    text-align: center !important;
+  }
+
+  .certificate__subtitle {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
+    text-align: center !important;
+  }
+
+  .certificate__date {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .certificate__btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Fix arrows position on mobile for certificates */
+  .certificates__slider-container .swiper-button-next,
+  .certificates__slider-container .swiper-button-prev {
+    top: 100px !important;
+    transform: translateY(0) !important;
+  }
+
+  .certificates__slider-container .swiper-button-next:hover,
+  .certificates__slider-container .swiper-button-prev:hover {
+    transform: scale(1.1) !important;
+  }
 }
