@@ -808,6 +808,23 @@ header {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* Small category for Tools (3 icons) */
+.skills__category--small {
+  max-width: 280px;
+  height: fit-content;
+  align-self: start;
+}
+
+.skills__category--small .skills__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 576px) {
+  .skills__category--small {
+    max-width: 100%;
+  }
+}
+
 .skills__category-header {
   display: flex;
   align-items: center;
