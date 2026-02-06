@@ -237,14 +237,28 @@ else if (
   themeButton.classList.add(iconTheme);
 }
 
+const homeImg = document.getElementById("home-img");
+
+function setHomeImage(theme) {
+  if (!homeImg) return;
+  if (theme === "dark") {
+    homeImg.src = "assets/images/CJay.png";
+  } else {
+    homeImg.src = "assets/images/image1.jpg";
+  }
+}
+
+// Check localStorage for theme preference
+// Set home image on load
+setHomeImage(getCurrentTheme());
+
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+  setHomeImage(getCurrentTheme());
 });
 
 /*==================== MOBILE PROJECT TOGGLES ====================*/
