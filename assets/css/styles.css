@@ -69,12 +69,13 @@
   border: 4px solid var(--first-color) !important;
   box-shadow: 0 8px 32px rgba(88, 172, 220, 0.3) !important;
   transition: all 0.3s ease !important;
-  width: min(300px, 90vw) !important;
-  height: min(300px, 90vw) !important;
+  width: min(300px, 70vw) !important;
+  height: auto !important;
   max-width: 100% !important;
   object-fit: cover !important;
   display: block !important;
   margin: 0 auto !important;
+  aspect-ratio: auto !important;
 }
 
 .back:hover {
@@ -271,6 +272,31 @@ img {
   .services.section,
   .contact.section {
     padding: 1.5rem 0;
+  }
+
+  /* Center contact section on mobile */
+  .contact__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 1.25rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .contact__information {
+    justify-content: center;
+    justify-self: center;
+    text-align: left;
+  }
+
+  .contact__form {
+    justify-self: center;
+    width: 100%;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -584,7 +610,6 @@ header {
   max-width: 100%;
   border-radius: 10px;
   object-fit: cover;
-  aspect-ratio: 1/1;
 }
 
 .home__blob {
@@ -2644,8 +2669,8 @@ body.dark-theme .projects__stat-item {
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .contact__information {
   display: flex;
@@ -2715,7 +2740,7 @@ textarea.contact__input {
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  justify-self: start;
+  justify-self: center;
 }
 
 .contact__inputs {
@@ -2917,10 +2942,10 @@ textarea.contact__input {
   }
 
   .contact__container.container {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
   }
 
   header {
@@ -2997,7 +3022,7 @@ textarea.contact__input {
   }
 
   .home__img {
-    max-width: 150px;
+    max-width: 170px;
   }
 
   .home__title {
@@ -3443,8 +3468,8 @@ textarea.contact__input {
   }
 
   .contact__container.container {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     padding: 0 1rem;
   }
@@ -4658,7 +4683,7 @@ textarea.contact__input {
   }
 
   .home__img {
-    max-width: 130px;
+    max-width: 180px;
   }
 
   .home__title {
@@ -4792,7 +4817,13 @@ textarea.contact__input {
   }
 
   .contact__container {
-    padding: 0 0.35rem;
+    padding: 0 0.75rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .contact__information {
+    justify-content: center;
   }
 
   .contact__icon {
@@ -4815,7 +4846,7 @@ textarea.contact__input {
 /* ---- Standard iPhone (390px - iPhone 14/15/16) ---- */
 @media screen and (min-width: 376px) and (max-width: 430px) {
   .home__img {
-    max-width: 160px;
+    max-width: 200px;
   }
 
   .home__title {
