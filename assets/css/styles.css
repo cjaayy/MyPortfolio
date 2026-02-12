@@ -3589,19 +3589,42 @@ textarea.contact__input {
   }
 
   .contact__container {
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 1fr;
     padding: 0 2rem;
-    row-gap: 2.5rem;
-    column-gap: 3rem;
-    align-items: start;
-    max-width: 900px;
+    row-gap: 2rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 700px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .contact__container > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 3rem;
+    width: 100%;
+  }
+
+  .contact__information {
+    margin-bottom: 0;
+  }
+
+  .contact__form {
+    justify-self: center;
+    width: 100%;
+    max-width: 600px;
   }
 
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: center;
   }
   .qualification__timeline {
     padding-left: 30px;
@@ -4056,21 +4079,22 @@ textarea.contact__input {
     bottom: -4.5rem;
   }
   .contact__form {
-    width: 460px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
+    justify-self: center;
   }
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   .contact__container {
-    grid-template-columns: 0.4fr 1fr;
+    grid-template-columns: 1fr;
     padding: 0 2rem;
-    column-gap: 4rem;
-    row-gap: 3rem;
-    max-width: 1100px;
+    row-gap: 2.5rem;
+    max-width: 800px;
     margin: 0 auto;
     width: 100%;
+    justify-items: center;
   }
   .form-group button {
     border: none;
@@ -4214,18 +4238,19 @@ textarea.contact__input {
   }
 
   .contact__container {
-    grid-template-columns: 0.4fr 1fr;
+    grid-template-columns: 1fr;
     padding: 0 3rem;
-    column-gap: 5rem;
-    row-gap: 4rem;
-    max-width: 1300px;
+    row-gap: 3rem;
+    max-width: 900px;
     margin: 0 auto;
     width: 100%;
+    justify-items: center;
   }
 
   .contact__form {
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 700px;
+    justify-self: center;
   }
 
   .contact__inputs {
