@@ -238,6 +238,7 @@ else if (
 }
 
 const homeImg = document.getElementById("home-img");
+const aboutImg = document.getElementById("about-img");
 
 function setHomeImage(theme) {
   if (!homeImg) return;
@@ -248,9 +249,19 @@ function setHomeImage(theme) {
   }
 }
 
+function setAboutImage(theme) {
+  if (!aboutImg) return;
+  if (theme === "dark") {
+    aboutImg.src = "assets/images/night.png";
+  } else {
+    aboutImg.src = "assets/images/day.png";
+  }
+}
+
 // Check localStorage for theme preference
 // Set home image on load
 setHomeImage(getCurrentTheme());
+setAboutImage(getCurrentTheme());
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
@@ -259,6 +270,7 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
   setHomeImage(getCurrentTheme());
+  setAboutImage(getCurrentTheme());
 });
 
 /*==================== MOBILE PROJECT TOGGLES ====================*/
