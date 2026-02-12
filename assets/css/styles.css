@@ -3248,9 +3248,10 @@ textarea.contact__input {
   }
 
   .form-group button {
-    width: 100%;
-    max-width: 100%;
-    padding: 0.75rem 1rem;
+    width: auto;
+    max-width: 200px;
+    min-width: 140px;
+    padding: 0.75rem 1.5rem;
     font-size: 0.85rem;
   }
 
