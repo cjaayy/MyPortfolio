@@ -692,6 +692,86 @@
                 <div class="project__glow"></div>
               </div>
             </div>
+
+            <!-- Project 2 - ONE STOP EDITING APP -->
+            <div class="swiper-slide">
+              <div class="project__card">
+                <div
+                  class="project__image-container project__image-container--mobile-app"
+                >
+                  <div class="project__phone-screenshots">
+                    <img
+                      src="assets/Projects/1000040631.jpg"
+                      alt="One Stop Editing App - Screen 1"
+                      class="project__phone-img"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/Projects/1000040632.jpg"
+                      alt="One Stop Editing App - Screen 2"
+                      class="project__phone-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div
+                    class="project__overlay"
+                    onclick="openPhoneLightbox()"
+                    style="cursor: pointer"
+                  >
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project__info">
+                  <div class="project__header">
+                    <h3 class="project__title">ONE STOP EDITING APP</h3>
+                    <span class="project__category">Mobile App</span>
+                  </div>
+                  <p class="project__subtitle">Edit and Create</p>
+
+                  <!-- Mobile Toggle Buttons -->
+                  <div class="project__mobile-toggles">
+                    <button
+                      class="project__toggle-btn"
+                      data-target="description"
+                    >
+                      Description
+                    </button>
+                    <button class="project__toggle-btn" data-target="tech">
+                      Tech Stack
+                    </button>
+                  </div>
+
+                  <div class="project__description">
+                    A mobile application for editing and creating content
+                    on-the-go. Built with Flutter and Dart for a smooth
+                    cross-platform experience on both Android and iOS.
+                  </div>
+                  <div class="project__tech">
+                    <span
+                      class="project__tech-item"
+                      data-tooltip="Programming Language"
+                    >
+                      <i class="uil uil-brackets-curly"></i> Dart
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Framework">
+                      <i class="uil uil-mobile-android"></i> Flutter
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2026
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-process"></i> In Progress
+                    </span>
+                  </div>
+                </div>
+                <div class="project__glow"></div>
+              </div>
+            </div>
           </div>
 
           <!-- Add arrows -->
@@ -1229,6 +1309,59 @@
       var randomColor = hexArray[Math.floor(Math.random() * hexArray.length)];
       // Set the value of variable --blue to another value (in this case "lightblue")
       r.style.setProperty("--first-color", randomColor);
+    </script>
+
+    <!-- Phone Lightbox Modal -->
+    <div
+      class="project__lightbox"
+      id="phoneLightbox"
+      onclick="closePhoneLightbox(event)"
+    >
+      <button
+        class="project__lightbox-close"
+        onclick="closePhoneLightbox(event)"
+        aria-label="Close preview"
+      >
+        <i class="uil uil-times"></i>
+      </button>
+      <img
+        src="assets/Projects/1000040631.jpg"
+        alt="One Stop Editing App - Screen 1"
+        class="project__lightbox-img"
+      />
+      <img
+        src="assets/Projects/1000040632.jpg"
+        alt="One Stop Editing App - Screen 2"
+        class="project__lightbox-img"
+      />
+    </div>
+
+    <!-- Phone Lightbox Script -->
+    <script>
+      function openPhoneLightbox() {
+        const lightbox = document.getElementById("phoneLightbox");
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePhoneLightbox(e) {
+        // Don't close if clicking on the images themselves
+        if (e.target.classList.contains("project__lightbox-img")) return;
+        const lightbox = document.getElementById("phoneLightbox");
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          const lightbox = document.getElementById("phoneLightbox");
+          if (lightbox && lightbox.classList.contains("active")) {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        }
+      });
     </script>
   </body>
 </html>
