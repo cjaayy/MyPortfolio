@@ -2334,6 +2334,13 @@ header {
   font-size: 0.85rem;
 }
 
+.project__tech-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
 /* Project Meta Info */
 .project__meta {
   display: flex;
