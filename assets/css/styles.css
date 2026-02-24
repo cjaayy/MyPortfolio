@@ -852,80 +852,141 @@ header {
   margin: 0 auto;
 }
 
-/* Accordion styles */
-.skills__accordion {
-  background-color: var(--container-color);
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-}
-
-.skills__accordion:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-
-.skills__accordion-header {
+/* Popup button group */
+.skills__btn-group {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.skills__accordion-header:hover {
-  background-color: rgba(var(--first-color-rgb, 88, 172, 220), 0.08);
-}
-
-.skills__accordion-title-group {
+.skills__popup-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
+  width: 160px;
+  height: 120px;
+  background-color: var(--container-color);
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 1rem;
+  font-family: inherit;
 }
 
-.skills__accordion-icon {
-  font-size: 1.5rem;
+.skills__popup-btn i {
+  font-size: 2rem;
   color: var(--first-color);
 }
 
-.skills__accordion-title {
-  font-size: var(--h2-font-size);
+.skills__popup-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.skills__popup-btn span {
+  font-size: var(--normal-font-size);
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
-  margin: 0;
 }
 
-.skills__accordion-arrow {
-  font-size: 1.5rem;
-  color: var(--first-color);
+.skills__popup-btn:hover {
+  border-color: var(--first-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Skills Modal Overlay */
+.skills__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.skills__modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.skills__modal-content {
+  background-color: var(--container-color);
+  border-radius: 1.5rem;
+  padding: 2rem 2rem 2.5rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.85);
   transition: transform 0.3s ease;
 }
 
-.skills__accordion.active .skills__accordion-arrow {
-  transform: rotate(180deg);
+.skills__modal.active .skills__modal-content {
+  transform: scale(1);
 }
 
-.skills__accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
+.skills__modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--title-color);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.skills__accordion.active .skills__accordion-body {
-  max-height: 2000px;
+.skills__modal-close:hover {
+  background: rgba(var(--first-color-rgb, 88, 172, 220), 0.15);
+  color: var(--first-color);
 }
 
-.skills__accordion-content {
-  padding: 0 1.5rem 1.5rem;
+.skills__modal-title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills__modal-title-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.skills__modal-body {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
 .skills__sub-section {
-  /* Sub-section within accordion */
+  /* Sub-section within modal */
 }
 
 .skills__sub-title {
@@ -2463,6 +2524,11 @@ body.dark-theme .project__image-container {
 
 body.dark-theme .projects__stat-item {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .skills__popup-icon,
+body.dark-theme .skills__modal-title-icon {
+  filter: invert(1);
 }
 
 /* Responsive Adjustments */
