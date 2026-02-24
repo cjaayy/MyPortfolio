@@ -371,219 +371,319 @@
       <h2 class="section__title">SKILLS</h2>
 
       <div class="skills__wrapper container">
-        <!-- Frontend Skills -->
-        <div class="skills__category">
-          <div class="skills__category-header">
-            <h3 class="skills__category-title">Frontend</h3>
+        <!-- Software Accordion -->
+        <div class="skills__accordion">
+          <div
+            class="skills__accordion-header"
+            onclick="toggleSkillsAccordion(this)"
+          >
+            <div class="skills__accordion-title-group">
+              <i class="uil uil-brackets-curly skills__accordion-icon"></i>
+              <h3 class="skills__accordion-title">Software</h3>
+            </div>
+            <i class="uil uil-angle-down skills__accordion-arrow"></i>
           </div>
-          <div class="skills__grid">
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/html.svg"
-                  alt="html"
-                />
+          <div class="skills__accordion-body">
+            <div class="skills__accordion-content">
+              <!-- Frontend -->
+              <div class="skills__sub-section">
+                <h4 class="skills__sub-title">Frontend</h4>
+                <div class="skills__grid">
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/html.svg"
+                        alt="html"
+                      />
+                    </div>
+                    <span class="skills__name">HTML</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/css.svg"
+                        alt="css"
+                      />
+                    </div>
+                    <span class="skills__name">CSS</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/javascript.svg"
+                        alt="javascript"
+                      />
+                    </div>
+                    <span class="skills__name">JavaScript</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                        alt="bootstrap"
+                      />
+                    </div>
+                    <span class="skills__name">Bootstrap</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                        alt="reactjs"
+                      />
+                    </div>
+                    <span class="skills__name">ReactJS</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                        alt="nextjs"
+                      />
+                    </div>
+                    <span class="skills__name">NextJS</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                        alt="typescript"
+                      />
+                    </div>
+                    <span class="skills__name">TypeScript</span>
+                  </div>
+                </div>
               </div>
-              <span class="skills__name">HTML</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/css.svg"
-                  alt="css"
-                />
+
+              <!-- Backend -->
+              <div class="skills__sub-section">
+                <h4 class="skills__sub-title">Backend</h4>
+                <div class="skills__grid">
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/java.svg"
+                        alt="java"
+                      />
+                    </div>
+                    <span class="skills__name">Java</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/cpp.svg"
+                        alt="c++"
+                      />
+                    </div>
+                    <span class="skills__name">C++</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/python.svg"
+                        alt="python"
+                      />
+                    </div>
+                    <span class="skills__name">Python</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/php.png"
+                        alt="php"
+                      />
+                    </div>
+                    <span class="skills__name">PHP</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/mysql.png"
+                        alt="mysql"
+                      />
+                    </div>
+                    <span class="skills__name">MySQL</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        alt="nodejs"
+                      />
+                    </div>
+                    <span class="skills__name">NodeJS</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+                        alt="laravel"
+                      />
+                    </div>
+                    <span class="skills__name">Laravel</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg"
+                        alt="rust"
+                      />
+                    </div>
+                    <span class="skills__name">Rust</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                        alt="mongodb"
+                      />
+                    </div>
+                    <span class="skills__name">MongoDB</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                        alt="supabase"
+                      />
+                    </div>
+                    <span class="skills__name">Supabase</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg"
+                        alt="firebase"
+                      />
+                    </div>
+                    <span class="skills__name">Firebase</span>
+                  </div>
+                </div>
               </div>
-              <span class="skills__name">CSS</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/javascript.svg"
-                  alt="javascript"
-                />
+
+              <!-- Mobile -->
+              <div class="skills__sub-section">
+                <h4 class="skills__sub-title">Mobile</h4>
+                <div class="skills__grid">
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                        alt="dart"
+                      />
+                    </div>
+                    <span class="skills__name">Dart</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                        alt="flutter"
+                      />
+                    </div>
+                    <span class="skills__name">Flutter</span>
+                  </div>
+                </div>
               </div>
-              <span class="skills__name">JavaScript</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                  alt="bootstrap"
-                />
+
+              <!-- Tools -->
+              <div class="skills__sub-section">
+                <h4 class="skills__sub-title">Tools</h4>
+                <div class="skills__grid">
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/vscode.png"
+                        alt="vscode"
+                      />
+                    </div>
+                    <span class="skills__name">VSCode</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/git.svg"
+                        alt="git"
+                      />
+                    </div>
+                    <span class="skills__name">Git</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <img
+                        class="skills__icon"
+                        src="assets/img/skills/github.png"
+                        alt="github"
+                      />
+                    </div>
+                    <span class="skills__name">GitHub</span>
+                  </div>
+                </div>
               </div>
-              <span class="skills__name">Bootstrap</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  alt="reactjs"
-                />
-              </div>
-              <span class="skills__name">ReactJS</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                  alt="nextjs"
-                />
-              </div>
-              <span class="skills__name">NextJS</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                  alt="typescript"
-                />
-              </div>
-              <span class="skills__name">TypeScript</span>
             </div>
           </div>
         </div>
 
-        <!-- Backend Skills -->
-        <div class="skills__category">
-          <div class="skills__category-header">
-            <h3 class="skills__category-title">Backend</h3>
+        <!-- Hardware Accordion -->
+        <div class="skills__accordion">
+          <div
+            class="skills__accordion-header"
+            onclick="toggleSkillsAccordion(this)"
+          >
+            <div class="skills__accordion-title-group">
+              <i class="uil uil-wrench skills__accordion-icon"></i>
+              <h3 class="skills__accordion-title">Hardware</h3>
+            </div>
+            <i class="uil uil-angle-down skills__accordion-arrow"></i>
           </div>
-          <div class="skills__grid">
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/java.svg"
-                  alt="java"
-                />
+          <div class="skills__accordion-body">
+            <div class="skills__accordion-content">
+              <!-- Troubleshooting & Repair -->
+              <div class="skills__sub-section">
+                <h4 class="skills__sub-title">Troubleshooting & Repair</h4>
+                <div class="skills__grid">
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <i class="uil uil-desktop skills__icon-font"></i>
+                    </div>
+                    <span class="skills__name">PC/Desktop</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <i class="uil uil-laptop skills__icon-font"></i>
+                    </div>
+                    <span class="skills__name">Laptop</span>
+                  </div>
+                  <div class="skills__item">
+                    <div class="skills__icon-wrapper">
+                      <i class="uil uil-mobile-android skills__icon-font"></i>
+                    </div>
+                    <span class="skills__name">Mobile Repair</span>
+                  </div>
+                </div>
               </div>
-              <span class="skills__name">Java</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/cpp.svg"
-                  alt="c++"
-                />
-              </div>
-              <span class="skills__name">C++</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/python.svg"
-                  alt="python"
-                />
-              </div>
-              <span class="skills__name">Python</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/php.png"
-                  alt="php"
-                />
-              </div>
-              <span class="skills__name">PHP</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/mysql.png"
-                  alt="mysql"
-                />
-              </div>
-              <span class="skills__name">MySQL</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                  alt="nodejs"
-                />
-              </div>
-              <span class="skills__name">NodeJS</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
-                  alt="laravel"
-                />
-              </div>
-              <span class="skills__name">Laravel</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg"
-                  alt="rust"
-                />
-              </div>
-              <span class="skills__name">Rust</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                  alt="mongodb"
-                />
-              </div>
-              <span class="skills__name">MongoDB</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tools -->
-        <div class="skills__category skills__category--small">
-          <div class="skills__category-header">
-            <h3 class="skills__category-title">Tools</h3>
-          </div>
-          <div class="skills__grid">
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/vscode.png"
-                  alt="vscode"
-                />
-              </div>
-              <span class="skills__name">VSCode</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/git.svg"
-                  alt="git"
-                />
-              </div>
-              <span class="skills__name">Git</span>
-            </div>
-            <div class="skills__item">
-              <div class="skills__icon-wrapper">
-                <img
-                  class="skills__icon"
-                  src="assets/img/skills/github.png"
-                  alt="github"
-                />
-              </div>
-              <span class="skills__name">GitHub</span>
             </div>
           </div>
         </div>
@@ -1335,6 +1435,14 @@
         class="project__lightbox-img"
       />
     </div>
+
+    <!-- Skills Accordion Script -->
+    <script>
+      function toggleSkillsAccordion(header) {
+        const accordion = header.parentElement;
+        accordion.classList.toggle("active");
+      }
+    </script>
 
     <!-- Phone Lightbox Script -->
     <script>
