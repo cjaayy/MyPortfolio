@@ -1372,6 +1372,16 @@ header {
   font-size: 1rem;
 }
 
+.qualification__logo {
+  height: 24px;
+  width: auto;
+  max-width: 100px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  object-fit: contain;
+}
+
 .qualification__description {
   font-size: var(--small-font-size);
   color: var(--text-color);
