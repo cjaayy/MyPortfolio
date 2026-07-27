@@ -13,7 +13,9 @@
     />
 
     <!-- SEO Meta Tags -->
-    <title>Christian Jay Mandani | Full-Stack Developer & IT Student Portfolio</title>
+    <title>
+      Christian Jay Mandani | Full-Stack Developer & IT Student Portfolio
+    </title>
     <meta
       name="description"
       content="Portfolio of Christian Jay Mandani (CJay). Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
@@ -110,6 +112,702 @@
         background-color: var(--first-color);
         color: #fff;
       }
+
+      /*==================== SWIPER PROJECTS CAROUSEL ====================*/
+      .projects__slider-container {
+        padding: 1rem 0.5rem 3.5rem;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .project__card {
+        background-color: var(--container-color);
+        border: 1px solid rgba(125, 125, 125, 0.15);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        max-width: 580px;
+        margin: 0 auto;
+        transition:
+          border-color 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .project__card:hover {
+        border-color: var(--first-color);
+      }
+
+      .project__image-container {
+        width: 100%;
+        height: 240px;
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.03);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+      }
+
+      body.dark-theme .project__image-container {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      .project__image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+        border-radius: 6px;
+      }
+
+      .project__card:hover .project__image {
+        transform: scale(1.02);
+      }
+
+      .project__info {
+        padding: 1.25rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .project__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .project__title {
+        font-size: var(--h3-font-size);
+        font-weight: 600;
+        color: var(--title-color);
+      }
+
+      .project__category {
+        font-size: var(--smaller-font-size);
+        color: var(--text-color-light);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .project__subtitle {
+        font-size: var(--small-font-size);
+        color: var(--first-color);
+        margin-bottom: 0.65rem;
+        font-weight: 500;
+      }
+
+      .project__description {
+        font-size: var(--small-font-size);
+        color: var(--text-color);
+        line-height: 1.55;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+      }
+
+      /* Monochromatic Tech Tags */
+      .project__tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .project__tech-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 6px;
+        font-size: var(--smaller-font-size);
+        font-weight: 500;
+        background-color: rgba(125, 125, 125, 0.08);
+        color: var(--text-color);
+        border: 1px solid rgba(125, 125, 125, 0.12);
+      }
+
+      .project__tech-icon {
+        width: 14px;
+        height: 14px;
+        filter: grayscale(100%);
+        opacity: 0.85;
+      }
+
+      .project__actions {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: auto;
+      }
+
+      .project__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1.25rem;
+        border-radius: 6px;
+        font-size: var(--small-font-size);
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border: 1px solid var(--first-color);
+        background-color: transparent;
+        color: var(--first-color);
+        cursor: pointer;
+      }
+
+      .project__btn:hover {
+        background-color: var(--first-color);
+        color: #ffffff;
+      }
+
+      .project__btn--ghost {
+        border-color: var(--text-color-light);
+        color: var(--text-color);
+      }
+
+      .project__btn--ghost:hover {
+        border-color: var(--title-color);
+        background-color: var(--title-color);
+        color: var(--container-color);
+      }
+
+      /*==================== PROJECT DETAIL MODALS ====================*/
+      .project__modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .project__modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .project__modal-content {
+        background-color: var(--container-color);
+        border: 1px solid rgba(125, 125, 125, 0.2);
+        border-radius: 12px;
+        padding: 2rem;
+        max-width: 600px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .project__modal-close {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        font-size: 1.5rem;
+        color: var(--text-color-light);
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+
+      .project__modal-close:hover {
+        color: var(--title-color);
+      }
+
+      .project__modal-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--title-color);
+        margin-bottom: 0.25rem;
+      }
+
+      .project__modal-subtitle {
+        font-size: 0.85rem;
+        color: var(--first-color);
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+      }
+
+      .project__modal-section {
+        margin-bottom: 1.25rem;
+      }
+
+      .project__modal-heading {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--title-color);
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .project__modal-text {
+        font-size: 0.85rem;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .project__modal-list {
+        list-style: disc;
+        padding-left: 1.25rem;
+        font-size: 0.85rem;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .project__modal-list li {
+        margin-bottom: 0.35rem;
+      }
+
+      .project__modal-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.4rem;
+      }
+
+      .project__modal-actions {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(125, 125, 125, 0.15);
+      }
+
+      /*==================== SWIPER NAVIGATION & MOBILE RESPONSIVENESS ====================*/
+      .projects__slider-container .swiper-button-next,
+      .projects__slider-container .swiper-button-prev {
+        width: 2.25rem;
+        height: 2.25rem;
+        background-color: var(--container-color);
+        border: 1px solid rgba(125, 125, 125, 0.2);
+        border-radius: 50%;
+        color: var(--first-color);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transition: all 0.25s ease;
+      }
+
+      .projects__slider-container .swiper-button-next::after,
+      .projects__slider-container .swiper-button-prev::after {
+        display: none;
+      }
+
+      .swiper-projects-icon {
+        font-size: 1.3rem;
+      }
+
+      .projects__slider-container .swiper-button-next:hover,
+      .projects__slider-container .swiper-button-prev:hover {
+        background-color: var(--first-color);
+        color: #ffffff;
+        border-color: var(--first-color);
+      }
+
+      @media screen and (max-width: 768px) {
+        /* Hero Buttons Single Line on Mobile */
+        .home__buttons {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          gap: 0.35rem;
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        .home__buttons .button {
+          flex: 1 1 0;
+          min-width: 0;
+          padding: 0.45rem 0.2rem;
+          font-size: 0.72rem;
+          justify-content: center;
+          white-space: nowrap;
+          text-align: center;
+          border-width: 1px;
+        }
+
+        .home__buttons .button__icon {
+          margin-left: 0.2rem;
+          font-size: 0.8rem;
+        }
+
+        .projects__slider-container {
+          padding: 0.5rem 0 3.25rem;
+        }
+
+        .projects__content.swiper-slide {
+          padding-left: 2.25rem;
+          padding-right: 2.25rem;
+        }
+
+        .project__card {
+          border-radius: 10px;
+        }
+
+        .project__image-container {
+          height: 180px;
+          padding: 0.5rem;
+          background-color: rgba(0, 0, 0, 0.025);
+          border: none;
+        }
+
+        .project__info {
+          padding: 1rem 1.15rem 1.15rem;
+        }
+
+        .project__header {
+          margin-bottom: 0.15rem;
+        }
+
+        .project__title {
+          font-size: 1.15rem;
+        }
+
+        .project__subtitle {
+          font-size: 0.78rem;
+          margin-bottom: 0.4rem;
+        }
+
+        .project__description {
+          font-size: 0.8rem;
+          line-height: 1.45;
+          margin-bottom: 0.75rem;
+        }
+
+        .project__tech {
+          gap: 0.35rem;
+          margin-bottom: 0.85rem;
+        }
+
+        .project__tech-item {
+          padding: 0.2rem 0.45rem;
+          font-size: 0.68rem;
+        }
+
+        .project__actions {
+          gap: 0.5rem;
+        }
+
+        .project__btn {
+          padding: 0.45rem 0.85rem;
+          font-size: 0.78rem;
+          border-radius: 6px;
+        }
+
+        /* Swiper Arrows in edge gutter */
+        .projects__slider-container .swiper-button-prev {
+          left: 0.15rem;
+          top: 38%;
+        }
+
+        .projects__slider-container .swiper-button-next {
+          right: 0.15rem;
+          top: 38%;
+        }
+
+        .projects__slider-container .swiper-button-next,
+        .projects__slider-container .swiper-button-prev {
+          width: 1.85rem;
+          height: 1.85rem;
+          background-color: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #ffffff;
+        }
+
+        .swiper-projects-icon {
+          font-size: 0.95rem;
+        }
+      }
+
+      /*==================== ANIMATED SCROLL DOWN ====================*/
+      .home__scroll-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--first-color);
+        transition: 0.3s ease;
+        text-decoration: none;
+      }
+
+      .home__scroll-arrow {
+        font-size: 1.25rem;
+        display: inline-block;
+        animation: scrollBounce 2s infinite ease-in-out;
+      }
+
+      .home__scroll-mouse {
+        font-size: 1.5rem;
+        display: inline-block;
+        animation: mouseFloat 2s infinite ease-in-out;
+      }
+
+      @keyframes scrollBounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(7px);
+        }
+        60% {
+          transform: translateY(3.5px);
+        }
+      }
+
+      @keyframes mouseFloat {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(4px);
+        }
+      }
+
+      /*==================== FLOATING SCROLL TOP BUTTON ====================*/
+      .scrollup {
+        position: fixed;
+        right: 1.25rem;
+        bottom: -20%;
+        background-color: var(--first-color);
+        opacity: 0.85;
+        padding: 0.45rem 0.65rem;
+        border-radius: 0.4rem;
+        z-index: 100;
+        transition: 0.4s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .scrollup:hover {
+        background-color: var(--first-color-alt);
+        opacity: 1;
+      }
+
+      .scrollup__icon {
+        font-size: 1.25rem;
+        color: #ffffff;
+      }
+
+      .show-scroll {
+        bottom: 3rem;
+      }
+
+      /*==================== ABOUT ME POLISH ====================*/
+      .about__data {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .about__description-text {
+        font-size: var(--normal-font-size);
+        color: var(--text-secondary);
+        line-height: 1.65;
+        margin-bottom: 1.15rem;
+      }
+
+      .about__resilience-text {
+        border-left: 3px solid var(--first-color);
+        padding-left: 0.85rem;
+        font-style: italic;
+        background-color: rgba(125, 125, 125, 0.05);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 0 6px 6px 0;
+      }
+
+      .about__image {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 12px;
+        justify-self: center;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .about__image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+      }
+
+      @media screen and (max-width: 768px) {
+        .about__container {
+          row-gap: 1.25rem;
+          text-align: center;
+        }
+
+        .about__resilience-text {
+          border-left: none;
+          border-top: 2px solid var(--first-color);
+          border-bottom: 2px solid var(--first-color);
+          border-radius: 6px;
+          padding: 0.65rem 0.85rem;
+        }
+
+        .about__image {
+          max-width: 220px;
+        }
+      }
+
+      /*==================== QUALIFICATION TABS & ALIGNMENT ====================*/
+      .qualification__container {
+        max-width: 768px;
+        margin: 0 auto;
+      }
+
+      .qualification__tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+      }
+
+      .qualification__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: var(--h3-font-size);
+        font-weight: 600;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+        margin-bottom: -1px;
+      }
+
+      .qualification__icon {
+        font-size: 1.3rem;
+      }
+
+      .qualification__button:hover {
+        color: var(--text-primary);
+      }
+
+      .qualification__button.qualification__active {
+        color: var(--text-primary);
+        border-bottom: 2px solid var(--first-color);
+      }
+
+      .qualification__content {
+        display: none;
+      }
+
+      .qualification__content.qualification__active {
+        display: block;
+      }
+
+      /* Qualifications Timeline Cards */
+      .qualification__timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .qualification__card {
+        background-color: var(--container-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: border-color 0.25s ease, transform 0.25s ease;
+      }
+
+      .qualification__card:hover {
+        border-color: var(--text-secondary);
+      }
+
+      .qualification__card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.35rem;
+      }
+
+      .qualification__title {
+        font-size: var(--h3-font-size);
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .qualification__subtitle {
+        font-size: var(--small-font-size);
+        color: var(--text-secondary);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .qualification__logo {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+
+      .qualification__subtitle a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .qualification__subtitle a:hover {
+        color: var(--text-primary);
+      }
+
+      .qualification__description {
+        font-size: var(--small-font-size);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .qualification__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .qualification__tag {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        font-size: var(--smaller-font-size);
+        font-weight: 500;
+        background-color: rgba(125, 125, 125, 0.1);
+        color: var(--text-secondary);
+        border: 1px solid var(--border-color);
+      }
+
+      .qualification__calender {
+        font-size: var(--smaller-font-size);
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
     </style>
   </head>
 
@@ -169,14 +867,26 @@
               </a>
             </li>
           </ul>
-          <i class="uil uil-times nav__close noSelect" id="nav-close" aria-label="Close Navigation Menu"></i>
+          <i
+            class="uil uil-times nav__close noSelect"
+            id="nav-close"
+            aria-label="Close Navigation Menu"
+          ></i>
         </div>
 
         <div class="nav__btns">
           <!-- theme change button -->
-          <i class="uil uil-moon change-theme uil-sun" id="theme-button" aria-label="Toggle Dark/Light Mode"></i>
+          <i
+            class="uil uil-moon change-theme uil-sun"
+            id="theme-button"
+            aria-label="Toggle Dark/Light Mode"
+          ></i>
 
-          <div class="nav__toggle noSelect" id="nav-toggle" aria-label="Open Navigation Menu">
+          <div
+            class="nav__toggle noSelect"
+            id="nav-toggle"
+            aria-label="Open Navigation Menu"
+          >
             <i class="uil uil-apps"></i>
           </div>
         </div>
@@ -247,17 +957,18 @@
               <h3 class="home__subtitle">IT Student | Full-Stack Developer</h3>
               <p class="home__description">
                 Full-Stack Web & Mobile Developer specializing in PHP/Laravel,
-                JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions.
+                JavaScript, and Flutter. Building efficient, scalable, and
+                user-centric digital solutions.
               </p>
 
               <!-- Action Buttons -->
               <div class="home__buttons">
-                <a href="#projects" class="button button--flex">
+                <a href="#projects" class="button button--flex button--ghost">
                   View Projects <i class="uil uil-scenery button__icon"></i>
                 </a>
                 <a
-                  href="assets/pdf/CV.pdf.pdf"
-                  download="CV.pdf.pdf"
+                  href="assets/pdf/Christian_Jay_Mandani_CV.pdf"
+                  download="Christian_Jay_Mandani_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="button button--flex button--ghost"
@@ -295,41 +1006,30 @@
           loading="lazy"
         />
         <div class="about__data">
-          <p class="about__description">
+          <p class="about__description-text">
             Back in my senior high school years, I learned HTML, CSS, and
-            Bootstrap, and that got me a bit interested in web and system
-            development. My first
-            <span class="title-highlight">Hello World </span> program was in the
-            Java programming language. <br /><br />
-            Now in college, I’ve picked up new programming languages like C++,
-            Java, and Python, but I’m more into JavaScript and PHP as my main
-            languages.
-            <br /><br />
-            I also have a disability called clubfoot in my right foot, but I can
-            do everything normally, and it’s not an obstacle to reaching my
-            goals in life.
-            <br /><br />
-            When I’m not coding, I usually watch movies,
-            <span class="title-highlight">K-dramas</span>, or
-            <span class="title-highlight">anime</span>, listen to
-            <span class="title-highlight">music</span>, and enjoy exploring new
-            technologies and working on side my projects.
+            Bootstrap, which sparked my deep passion for web and system
+            development. My very first
+            <span class="title-highlight">Hello World</span> program was written in
+            the Java programming language.
           </p>
-
-          <div class="about__buttons">
-            <a
-              href="assets/pdf/CV.pdf.pdf"
-              download="CV.pdf.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button button--flex"
-            >
-              Download CV <i class="uil uil-download-alt button__icon"></i>
-            </a>
-            <a href="#contact" class="button button--flex button--ghost">
-              Contact Me <i class="uil uil-message button__icon"></i>
-            </a>
-          </div>
+          <p class="about__description-text">
+            Now in college, I’ve expanded my technical toolkit to include C++,
+            Java, and Python, while specializing primarily in
+            <span class="title-highlight">JavaScript</span> and
+            <span class="title-highlight">TypeScript</span> for web applications, as well as
+            <span class="title-highlight">Dart</span> and
+            <span class="title-highlight">Flutter</span> for mobile development.
+          </p>
+          <p class="about__description-text about__resilience-text">
+            I live with a physical condition called clubfoot in my right foot—yet I perform everything normally. It serves as a continuous reminder of my resilience, drive, and determination to conquer every goal in life.
+          </p>
+          <p class="about__description-text">
+            When I’m not coding, I enjoy watching movies,
+            <span class="title-highlight">K-dramas</span>, or
+            <span class="title-highlight">anime</span>, listening to
+            <span class="title-highlight">music</span>, and constantly exploring emerging web technologies and building side projects.
+          </p>
         </div>
       </div>
     </section>
@@ -345,6 +1045,7 @@
             class="qualification__button button--flex qualification__active"
             data-target="#work"
           >
+            <i class="uil uil-briefcase-alt qualification__icon"></i>
             <span>Work</span>
           </div>
 
@@ -352,6 +1053,7 @@
             class="qualification__button button--flex"
             data-target="#education"
           >
+            <i class="uil uil-graduation-cap qualification__icon"></i>
             <span>Education</span>
           </div>
         </div>
@@ -822,13 +1524,13 @@
 
     <!--==================== PROJECTS ====================-->
     <section class="projects section fade-in" id="projects">
-      <div class="projects__container container">
+      <div class="projects__container container swiper-container">
         <h2 class="section__title">MY PROJECTS</h2>
 
         <div class="projects__slider-container swiper">
           <div class="swiper-wrapper">
             <!-- Project 1 - AR HOMES POSADAS -->
-            <div class="swiper-slide">
+            <div class="projects__content swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
                   <img
@@ -856,30 +1558,13 @@
                   <p class="project__subtitle">
                     Farm Resort Reservation System
                   </p>
-
-                  <!-- Mobile Toggle Buttons -->
-                  <div class="project__mobile-toggles">
-                    <button
-                      class="project__toggle-btn"
-                      data-target="description"
-                    >
-                      Description
-                    </button>
-                    <button class="project__toggle-btn" data-target="tech">
-                      Tech Stack
-                    </button>
-                  </div>
-
                   <div class="project__description">
                     A comprehensive farm resort reservation system that enables
                     users to book accommodations, manage reservations, and
                     streamline the booking process for AR HOMES POSADAS.
                   </div>
                   <div class="project__tech">
-                    <span
-                      class="project__tech-item"
-                      data-tooltip="Markup Language"
-                    >
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="assets/img/skills/html.svg"
@@ -887,7 +1572,7 @@
                       />
                       HTML
                     </span>
-                    <span class="project__tech-item" data-tooltip="Styling">
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="assets/img/skills/css.svg"
@@ -895,7 +1580,7 @@
                       />
                       CSS
                     </span>
-                    <span class="project__tech-item" data-tooltip="Frontend">
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="assets/img/skills/javascript.svg"
@@ -903,7 +1588,7 @@
                       />
                       JavaScript
                     </span>
-                    <span class="project__tech-item" data-tooltip="Backend">
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="assets/img/skills/php.png"
@@ -911,7 +1596,7 @@
                       />
                       PHP
                     </span>
-                    <span class="project__tech-item" data-tooltip="Database">
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="assets/img/skills/mysql.png"
@@ -919,68 +1604,44 @@
                       />
                       MySQL
                     </span>
-                    <span class="project__tech-item" data-tooltip="Web Server">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
-                        alt="apache"
-                      />
-                      Apache
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Tunneling">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg"
-                        alt="cloudflare"
-                      />
-                      Cloudflare
-                    </span>
-                  </div>
-                  <div class="project__meta">
-                    <span class="project__meta-item" title="Project Year">
-                      <i class="uil uil-calendar-alt"></i> 2025
-                    </span>
-                    <span class="project__meta-item" title="Status">
-                      <i class="uil uil-check"></i> Completed
-                    </span>
                   </div>
                   <div class="project__actions">
+                    <button
+                      onclick="openProjectModal(1)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Details <i class="uil uil-info-circle"></i>
+                    </button>
                     <a
                       href="https://cjaayy.github.io/AR_HOMES_POSADAS_Farm_Resort_Reservation_System_Design_2/"
                       target="_blank"
-                      class="project__btn project__btn--primary"
+                      class="project__btn"
                     >
-                      Live Demo
+                      Live Demo <i class="uil uil-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
-                <div class="project__glow"></div>
               </div>
             </div>
 
             <!-- Project 2 - ONE STOP EDITING APP -->
-            <div class="swiper-slide">
+            <div class="projects__content swiper-slide">
               <div class="project__card">
-                <div
-                  class="project__image-container project__image-container--mobile-app"
-                >
-                  <div class="project__phone-screenshots">
-                    <img
-                      src="assets/Projects/1000040631.jpg"
-                      alt="One Stop Editing App - Screen 1"
-                      class="project__phone-img"
-                      loading="lazy"
-                    />
-                    <img
-                      src="assets/Projects/1000040632.jpg"
-                      alt="One Stop Editing App - Screen 2"
-                      class="project__phone-img"
-                      loading="lazy"
-                    />
-                  </div>
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/1000040631.jpg"
+                    alt="One Stop Editing App Preview"
+                    class="project__image"
+                    loading="lazy"
+                  />
                   <div
                     class="project__overlay"
-                    onclick="openPhoneLightbox()"
+                    onclick="
+                      openPhoneLightbox([
+                        'assets/Projects/1000040631.jpg',
+                        'assets/Projects/1000040632.jpg',
+                      ])
+                    "
                     style="cursor: pointer"
                   >
                     <div class="project__overlay-content">
@@ -994,39 +1655,14 @@
                     <h3 class="project__title">ONE STOP EDITING APP</h3>
                     <span class="project__category">Mobile App</span>
                   </div>
-                  <p class="project__subtitle">Edit and Create</p>
-
-                  <!-- Mobile Toggle Buttons -->
-                  <div class="project__mobile-toggles">
-                    <button
-                      class="project__toggle-btn"
-                      data-target="description"
-                    >
-                      Description
-                    </button>
-                    <button class="project__toggle-btn" data-target="tech">
-                      Tech Stack
-                    </button>
-                  </div>
-
+                  <p class="project__subtitle">Content Creation Tool</p>
                   <div class="project__description">
                     A mobile application for editing and creating content
-                    on-the-go. Built with Flutter and Dart for a smooth
-                    cross-platform experience on both Android and iOS.
+                    on-the-go. Built with Flutter, Firebase, and Dart for a
+                    smooth cross-platform experience.
                   </div>
                   <div class="project__tech">
-                    <span
-                      class="project__tech-item"
-                      data-tooltip="Programming Language"
-                    >
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-                        alt="dart"
-                      />
-                      Dart
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Framework">
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
@@ -1034,39 +1670,70 @@
                       />
                       Flutter
                     </span>
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                        alt="firebase"
+                      />
+                      Firebase
+                    </span>
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                        alt="dart"
+                      />
+                      Dart
+                    </span>
                   </div>
-                  <div class="project__meta">
-                    <span class="project__meta-item" title="Project Year">
-                      <i class="uil uil-calendar-alt"></i> 2026
-                    </span>
-                    <span class="project__meta-item" title="Status">
-                      <i class="uil uil-process"></i> In Progress
-                    </span>
+                  <div class="project__actions">
+                    <button
+                      onclick="openProjectModal(2)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Details <i class="uil uil-info-circle"></i>
+                    </button>
+                    <button
+                      onclick="
+                        openPhoneLightbox([
+                          'assets/Projects/1000040631.jpg',
+                          'assets/Projects/1000040632.jpg',
+                        ])
+                      "
+                      class="project__btn project__btn--ghost"
+                    >
+                      Mobile Preview <i class="uil uil-mobile-android"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="project__glow"></div>
               </div>
             </div>
 
             <!-- Project 3 - BUDGET BUDDY -->
-            <div class="swiper-slide">
+            <div class="projects__content swiper-slide">
               <div class="project__card">
-                <div
-                  class="project__image-container project__image-container--mobile-app"
-                >
-                  <div class="project__phone-screenshots">
-                    <img
-                      src="assets/Projects/1000042784.jpg"
-                      alt="Budget Buddy - Screen 1"
-                      class="project__phone-img"
-                      loading="lazy"
-                    />
-                    <img
-                      src="assets/Projects/1000042783.jpg"
-                      alt="Budget Buddy - Screen 2"
-                      class="project__phone-img"
-                      loading="lazy"
-                    />
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/1000042784.jpg"
+                    alt="Budget Buddy App Preview"
+                    class="project__image"
+                    loading="lazy"
+                  />
+                  <div
+                    class="project__overlay"
+                    onclick="
+                      openPhoneLightbox([
+                        'assets/Projects/1000042784.jpg',
+                        'assets/Projects/1000042783.jpg',
+                      ])
+                    "
+                    style="cursor: pointer"
+                  >
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
                   </div>
                 </div>
                 <div class="project__info">
@@ -1075,37 +1742,13 @@
                     <span class="project__category">Mobile App</span>
                   </div>
                   <p class="project__subtitle">Expense Tracking</p>
-
-                  <div class="project__mobile-toggles">
-                    <button
-                      class="project__toggle-btn"
-                      data-target="description"
-                    >
-                      Description
-                    </button>
-                    <button class="project__toggle-btn" data-target="tech">
-                      Tech Stack
-                    </button>
-                  </div>
-
                   <div class="project__description">
                     A budgeting application designed to help users track
-                    expenses, monitor spending habits, and stay on top of their
+                    expenses, monitor spending habits, and stay on top of
                     financial goals.
                   </div>
                   <div class="project__tech">
-                    <span
-                      class="project__tech-item"
-                      data-tooltip="Programming Language"
-                    >
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-                        alt="dart"
-                      />
-                      Dart
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Framework">
+                    <span class="project__tech-item">
                       <img
                         class="project__tech-icon"
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
@@ -1113,22 +1756,48 @@
                       />
                       Flutter
                     </span>
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                        alt="firebase"
+                      />
+                      Firebase
+                    </span>
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                        alt="dart"
+                      />
+                      Dart
+                    </span>
                   </div>
-                  <div class="project__meta">
-                    <span class="project__meta-item" title="Project Year">
-                      <i class="uil uil-calendar-alt"></i> 2026
-                    </span>
-                    <span class="project__meta-item" title="Status">
-                      <i class="uil uil-process"></i> In Progress
-                    </span>
+                  <div class="project__actions">
+                    <button
+                      onclick="openProjectModal(3)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Details <i class="uil uil-info-circle"></i>
+                    </button>
+                    <button
+                      onclick="
+                        openPhoneLightbox([
+                          'assets/Projects/1000042784.jpg',
+                          'assets/Projects/1000042783.jpg',
+                        ])
+                      "
+                      class="project__btn project__btn--ghost"
+                    >
+                      Mobile Preview <i class="uil uil-mobile-android"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="project__glow"></div>
               </div>
             </div>
 
             <!-- Project 4 - ISKOLAR NG MARIVELES -->
-            <div class="swiper-slide">
+            <div class="projects__content swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
                   <img
@@ -1154,58 +1823,58 @@
                     <span class="project__category">Scholarship Portal</span>
                   </div>
                   <p class="project__subtitle">Municipal Web Application</p>
-
-                  <div class="project__mobile-toggles">
-                    <button class="project__toggle-btn" data-target="description">
-                      Description
-                    </button>
-                    <button class="project__toggle-btn" data-target="tech">
-                      Tech Stack
-                    </button>
-                  </div>
-
                   <div class="project__description">
-                    A web-based scholarship management portal designed to streamline 
-                    student application submissions, document verification, and 
-                    allowance distribution tracking for municipal scholars.
+                    A comprehensive digital scholarship application and
+                    management portal designed for students and municipal
+                    administrators.
                   </div>
                   <div class="project__tech">
-                    <span class="project__tech-item" data-tooltip="Markup Language">
-                      <img class="project__tech-icon" src="assets/img/skills/html.svg" alt="html" /> HTML
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                        alt="nextjs"
+                      />
+                      Next.js
                     </span>
-                    <span class="project__tech-item" data-tooltip="Styling">
-                      <img class="project__tech-icon" src="assets/img/skills/css.svg" alt="css" /> CSS
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                        alt="supabase"
+                      />
+                      Supabase
                     </span>
-                    <span class="project__tech-item" data-tooltip="Frontend Scripting">
-                      <img class="project__tech-icon" src="assets/img/skills/javascript.svg" alt="javascript" /> JavaScript
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Backend Logic">
-                      <img class="project__tech-icon" src="assets/img/skills/php.png" alt="php" /> PHP
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Database">
-                      <img class="project__tech-icon" src="assets/img/skills/mysql.png" alt="mysql" /> MySQL
-                    </span>
-                  </div>
-                  <div class="project__meta">
-                    <span class="project__meta-item" title="Project Year">
-                      <i class="uil uil-calendar-alt"></i> 2024
-                    </span>
-                    <span class="project__meta-item" title="Status">
-                      <i class="uil uil-check"></i> Completed
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                        alt="tailwindcss"
+                      />
+                      Tailwind CSS
                     </span>
                   </div>
                   <div class="project__actions">
-                    <a href="assets/Projects/iskolar-ng-mariveles.png" target="_blank" class="project__btn project__btn--primary">
-                      View Preview
+                    <button
+                      onclick="openProjectModal(4)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Details <i class="uil uil-info-circle"></i>
+                    </button>
+                    <a
+                      href="assets/Projects/iskolar-ng-mariveles.png"
+                      target="_blank"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Preview <i class="uil uil-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
-                <div class="project__glow"></div>
               </div>
             </div>
 
-            <!-- Project 5 - MNHS CAMAYA CAMPUS GRADES MANAGEMENT SYSTEM -->
-            <div class="swiper-slide">
+            <!-- Project 5 - MNHS GRADES MANAGEMENT SYSTEM -->
+            <div class="projects__content swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
                   <img
@@ -1231,58 +1900,57 @@
                     <span class="project__category">Academic System</span>
                   </div>
                   <p class="project__subtitle">School Grade Management</p>
-
-                  <div class="project__mobile-toggles">
-                    <button class="project__toggle-btn" data-target="description">
-                      Description
-                    </button>
-                    <button class="project__toggle-btn" data-target="tech">
-                      Tech Stack
-                    </button>
-                  </div>
-
                   <div class="project__description">
-                    An automated grade management system allowing educators and 
-                    administrators to compute quarterly grades, generate report 
-                    cards, and store academic student records securely.
+                    An automated academic grade recording and portal system for
+                    faculty, students, and school administrators.
                   </div>
                   <div class="project__tech">
-                    <span class="project__tech-item" data-tooltip="Markup Language">
-                      <img class="project__tech-icon" src="assets/img/skills/html.svg" alt="html" /> HTML
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                        alt="nextjs"
+                      />
+                      Next.js
                     </span>
-                    <span class="project__tech-item" data-tooltip="Styling">
-                      <img class="project__tech-icon" src="assets/img/skills/css.svg" alt="css" /> CSS
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                        alt="supabase"
+                      />
+                      Supabase
                     </span>
-                    <span class="project__tech-item" data-tooltip="Frontend Framework">
-                      <img class="project__tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstrap" /> Bootstrap
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Backend Logic">
-                      <img class="project__tech-icon" src="assets/img/skills/php.png" alt="php" /> PHP
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Database">
-                      <img class="project__tech-icon" src="assets/img/skills/mysql.png" alt="mysql" /> MySQL
-                    </span>
-                  </div>
-                  <div class="project__meta">
-                    <span class="project__meta-item" title="Project Year">
-                      <i class="uil uil-calendar-alt"></i> 2024
-                    </span>
-                    <span class="project__meta-item" title="Status">
-                      <i class="uil uil-check"></i> Completed
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                        alt="typescript"
+                      />
+                      TypeScript
                     </span>
                   </div>
                   <div class="project__actions">
-                    <a href="assets/Projects/mnhs-camaya-campus-grades-management-system copy.png" target="_blank" class="project__btn project__btn--primary">
-                      View Preview
+                    <button
+                      onclick="openProjectModal(5)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Details <i class="uil uil-info-circle"></i>
+                    </button>
+                    <a
+                      href="assets/Projects/mnhs-camaya-campus-grades-management-system copy.png"
+                      target="_blank"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Preview <i class="uil uil-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
-                <div class="project__glow"></div>
               </div>
             </div>
 
             <!-- Project 6 - PUP BATAAN UGNAY -->
-            <div class="swiper-slide">
+            <div class="projects__content swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
                   <img
@@ -1308,58 +1976,57 @@
                     <span class="project__category">Institutional Portal</span>
                   </div>
                   <p class="project__subtitle">Campus Community Platform</p>
-
-                  <div class="project__mobile-toggles">
-                    <button class="project__toggle-btn" data-target="description">
-                      Description
-                    </button>
-                    <button class="project__toggle-btn" data-target="tech">
-                      Tech Stack
-                    </button>
-                  </div>
-
                   <div class="project__description">
-                    A centralized campus web portal dedicated to facilitating university 
-                    news broadcasts, event announcements, student organization activities, 
-                    and institutional updates.
+                    An institutional community portal and communication platform
+                    for campus updates, events, and student engagement.
                   </div>
                   <div class="project__tech">
-                    <span class="project__tech-item" data-tooltip="Markup Language">
-                      <img class="project__tech-icon" src="assets/img/skills/html.svg" alt="html" /> HTML
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                        alt="nextjs"
+                      />
+                      Next.js
                     </span>
-                    <span class="project__tech-item" data-tooltip="Styling">
-                      <img class="project__tech-icon" src="assets/img/skills/css.svg" alt="css" /> CSS
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                        alt="supabase"
+                      />
+                      Supabase
                     </span>
-                    <span class="project__tech-item" data-tooltip="Frontend Scripting">
-                      <img class="project__tech-icon" src="assets/img/skills/javascript.svg" alt="javascript" /> JavaScript
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Backend Logic">
-                      <img class="project__tech-icon" src="assets/img/skills/php.png" alt="php" /> PHP
-                    </span>
-                    <span class="project__tech-item" data-tooltip="Database">
-                      <img class="project__tech-icon" src="assets/img/skills/mysql.png" alt="mysql" /> MySQL
-                    </span>
-                  </div>
-                  <div class="project__meta">
-                    <span class="project__meta-item" title="Project Year">
-                      <i class="uil uil-calendar-alt"></i> 2025
-                    </span>
-                    <span class="project__meta-item" title="Status">
-                      <i class="uil uil-check"></i> Completed
+                    <span class="project__tech-item">
+                      <img
+                        class="project__tech-icon"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                        alt="tailwindcss"
+                      />
+                      Tailwind CSS
                     </span>
                   </div>
                   <div class="project__actions">
-                    <a href="assets/Projects/pup-bataanu-ugnay.png" target="_blank" class="project__btn project__btn--primary">
-                      View Preview
+                    <button
+                      onclick="openProjectModal(6)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Details <i class="uil uil-info-circle"></i>
+                    </button>
+                    <a
+                      href="assets/Projects/pup-bataanu-ugnay.png"
+                      target="_blank"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Preview <i class="uil uil-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
-                <div class="project__glow"></div>
               </div>
             </div>
           </div>
 
-          <!-- Add arrows -->
+          <!-- Add Navigation Controls -->
           <div class="swiper-button-next">
             <i class="uil uil-angle-right-b swiper-projects-icon"></i>
           </div>
@@ -1798,8 +2465,12 @@
       <div class="footer__bg">
         <div class="footer__container container grid">
           <div>
-            <h2 class="title-highlight" style="font-size: var(--h1-font-size);">CJAY</h2>
-            <span class="footer__subtitle">IT Student & Full-Stack Developer</span>
+            <h2 class="title-highlight" style="font-size: var(--h1-font-size)">
+              CJAY
+            </h2>
+            <span class="footer__subtitle"
+              >IT Student & Full-Stack Developer</span
+            >
           </div>
 
           <div class="footer__socials">
@@ -1859,7 +2530,12 @@
 
     <!--==================== SCROLL TOP ====================-->
 
-    <a href="#" class="scrollup show-scroll" id="scroll-up" aria-label="Scroll back to top">
+    <a
+      href="#"
+      class="scrollup show-scroll"
+      id="scroll-up"
+      aria-label="Scroll back to top"
+    >
       <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
@@ -1929,7 +2605,548 @@
       />
     </div>
 
+    <!--==================== PROJECT DETAIL MODALS ====================-->
+    <!-- Modal 1 - AR HOMES POSADAS -->
+    <div
+      class="project__modal"
+      id="projectModal-1"
+      onclick="closeProjectModal(event, 1)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(1)"
+        ></i>
+        <h3 class="project__modal-title">AR HOMES POSADAS</h3>
+        <p class="project__modal-subtitle">Farm Resort Reservation System</p>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Overview</h4>
+          <p class="project__modal-text">
+            A comprehensive farm resort reservation system that enables users to
+            book accommodations, check real-time room availability, and
+            streamline reservation management for AR HOMES POSADAS.
+          </p>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Core Features</h4>
+          <ul class="project__modal-list">
+            <li>Online accommodation booking & reservation engine.</li>
+            <li>
+              Real-time room availability calendar & inventory management.
+            </li>
+            <li>
+              Administrative dashboard for managing guest reservations &
+              payments.
+            </li>
+            <li>Automated email/SMS reservation confirmation system.</li>
+          </ul>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Tech Stack</h4>
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="assets/img/skills/html.svg"
+                alt="html"
+              />
+              HTML5</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="assets/img/skills/css.svg"
+                alt="css"
+              />
+              CSS3</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="assets/img/skills/javascript.svg"
+                alt="javascript"
+              />
+              JavaScript</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="assets/img/skills/php.png"
+                alt="php"
+              />
+              PHP</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="assets/img/skills/mysql.png"
+                alt="mysql"
+              />
+              MySQL</span
+            >
+          </div>
+        </div>
+
+        <div class="project__modal-actions">
+          <a
+            href="https://cjaayy.github.io/AR_HOMES_POSADAS_Farm_Resort_Reservation_System_Design_2/"
+            target="_blank"
+            class="project__btn"
+          >
+            Live Demo <i class="uil uil-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 - ONE STOP EDITING APP -->
+    <div
+      class="project__modal"
+      id="projectModal-2"
+      onclick="closeProjectModal(event, 2)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(2)"
+        ></i>
+        <h3 class="project__modal-title">ONE STOP EDITING APP</h3>
+        <p class="project__modal-subtitle">Mobile Content Creation Tool</p>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Overview</h4>
+          <p class="project__modal-text">
+            A mobile application for editing and creating content on-the-go.
+            Built with Flutter, Firebase, and Dart to deliver a fast,
+            cross-platform media editing experience.
+          </p>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Core Features</h4>
+          <ul class="project__modal-list">
+            <li>Cross-platform photo & video editing toolset.</li>
+            <li>Firebase authentication and cloud asset storage.</li>
+            <li>Offline media processing with instant real-time preview.</li>
+            <li>
+              Preset filters, custom text overlays, and direct social export.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Tech Stack</h4>
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                alt="flutter"
+              />
+              Flutter</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                alt="firebase"
+              />
+              Firebase</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                alt="dart"
+              />
+              Dart</span
+            >
+          </div>
+        </div>
+
+        <div class="project__modal-actions">
+          <button
+            onclick="
+              closeProjectModalDirect(2);
+              openPhoneLightbox([
+                'assets/Projects/1000040631.jpg',
+                'assets/Projects/1000040632.jpg',
+              ]);
+            "
+            class="project__btn project__btn--ghost"
+          >
+            Mobile Screenshots <i class="uil uil-mobile-android"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 - BUDGET BUDDY -->
+    <div
+      class="project__modal"
+      id="projectModal-3"
+      onclick="closeProjectModal(event, 3)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(3)"
+        ></i>
+        <h3 class="project__modal-title">BUDGET BUDDY</h3>
+        <p class="project__modal-subtitle">
+          Expense Tracking & Financial Assistant
+        </p>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Overview</h4>
+          <p class="project__modal-text">
+            A mobile budgeting application engineered to empower users to record
+            expenses, monitor spending habits, set financial targets, and sync
+            data securely to the cloud.
+          </p>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Core Features</h4>
+          <ul class="project__modal-list">
+            <li>
+              Daily expense and income logging with customizable categories.
+            </li>
+            <li>Firebase Cloud Firestore sync across multiple user devices.</li>
+            <li>
+              Visual spending charts, category breakdown, and monthly budget
+              targets.
+            </li>
+            <li>Secure user authentication and automated expense reports.</li>
+          </ul>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Tech Stack</h4>
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                alt="flutter"
+              />
+              Flutter</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                alt="firebase"
+              />
+              Firebase</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                alt="dart"
+              />
+              Dart</span
+            >
+          </div>
+        </div>
+
+        <div class="project__modal-actions">
+          <button
+            onclick="
+              closeProjectModalDirect(3);
+              openPhoneLightbox([
+                'assets/Projects/1000042784.jpg',
+                'assets/Projects/1000042783.jpg',
+              ]);
+            "
+            class="project__btn project__btn--ghost"
+          >
+            Mobile Screenshots <i class="uil uil-mobile-android"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 - ISKOLAR NG MARIVELES -->
+    <div
+      class="project__modal"
+      id="projectModal-4"
+      onclick="closeProjectModal(event, 4)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(4)"
+        ></i>
+        <h3 class="project__modal-title">ISKOLAR NG MARIVELES</h3>
+        <p class="project__modal-subtitle">Municipal Scholarship Portal</p>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Overview</h4>
+          <p class="project__modal-text">
+            A comprehensive digital scholarship application and management
+            portal designed for student applicants and municipal education
+            administrators.
+          </p>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Core Features</h4>
+          <ul class="project__modal-list">
+            <li>
+              Online student application submission & document upload vault.
+            </li>
+            <li>Supabase database backend & storage bucket integration.</li>
+            <li>
+              Admin verification queue for applicant grading & document
+              approval.
+            </li>
+            <li>
+              Allowance disbursement tracking & automated notification portal.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Tech Stack</h4>
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="nextjs"
+              />
+              Next.js</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                alt="tailwindcss"
+              />
+              Tailwind CSS</span
+            >
+          </div>
+        </div>
+
+        <div class="project__modal-actions">
+          <a
+            href="assets/Projects/iskolar-ng-mariveles.png"
+            target="_blank"
+            class="project__btn project__btn--ghost"
+          >
+            View Preview <i class="uil uil-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5 - MNHS GRADES SYSTEM -->
+    <div
+      class="project__modal"
+      id="projectModal-5"
+      onclick="closeProjectModal(event, 5)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(5)"
+        ></i>
+        <h3 class="project__modal-title">MNHS GRADES SYSTEM</h3>
+        <p class="project__modal-subtitle">
+          Academic Grade Recording & School Portal
+        </p>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Overview</h4>
+          <p class="project__modal-text">
+            An automated academic grade recording and portal system designed for
+            faculty members, students, and school administrators at MNHS Camaya
+            Campus.
+          </p>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Core Features</h4>
+          <ul class="project__modal-list">
+            <li>
+              Automated quarterly grade computation conforming to DepEd grading
+              rubrics.
+            </li>
+            <li>
+              Teacher grade portal with spreadsheet batch upload & PDF report
+              card generator.
+            </li>
+            <li>
+              Secure student & parent portal to view quarterly grades &
+              attendance.
+            </li>
+            <li>
+              Role-based access control backed by Supabase Auth & RLS policies.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Tech Stack</h4>
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="nextjs"
+              />
+              Next.js</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="typescript"
+              />
+              TypeScript</span
+            >
+          </div>
+        </div>
+
+        <div class="project__modal-actions">
+          <a
+            href="assets/Projects/mnhs-camaya-campus-grades-management-system copy.png"
+            target="_blank"
+            class="project__btn project__btn--ghost"
+          >
+            View Preview <i class="uil uil-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 6 - PUP BATAAN UGNAY -->
+    <div
+      class="project__modal"
+      id="projectModal-6"
+      onclick="closeProjectModal(event, 6)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(6)"
+        ></i>
+        <h3 class="project__modal-title">PUP BATAAN UGNAY</h3>
+        <p class="project__modal-subtitle">
+          Institutional Community & Event Portal
+        </p>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Overview</h4>
+          <p class="project__modal-text">
+            An institutional community portal and communication platform built
+            to facilitate university news broadcasts, campus event
+            announcements, student organization activities, and official
+            updates.
+          </p>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Core Features</h4>
+          <ul class="project__modal-list">
+            <li>
+              Centralized campus news feed & announcement broadcasting engine.
+            </li>
+            <li>Interactive event calendar with student RSVP and reminders.</li>
+            <li>Student organization directory & publication posting board.</li>
+            <li>
+              Supabase real-time notifications for urgent campus advisories.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project__modal-section">
+          <h4 class="project__modal-heading">Tech Stack</h4>
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="nextjs"
+              />
+              Next.js</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                alt="tailwindcss"
+              />
+              Tailwind CSS</span
+            >
+          </div>
+        </div>
+
+        <div class="project__modal-actions">
+          <a
+            href="assets/Projects/pup-bataanu-ugnay.png"
+            target="_blank"
+            class="project__btn project__btn--ghost"
+          >
+            View Preview <i class="uil uil-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Skills Modal Script -->
+    <script>
+      function openProjectModal(id) {
+        const modal = document.getElementById("projectModal-" + id);
+        if (modal) {
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      function closeProjectModal(e, id) {
+        if (e.target.classList.contains("project__modal")) {
+          closeProjectModalDirect(id);
+        }
+      }
+
+      function closeProjectModalDirect(id) {
+        const modal = document.getElementById("projectModal-" + id);
+        if (modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      }
+    </script>
     <script>
       function openSkillsModal(type) {
         const modal = document.getElementById("skillsModal-" + type);
@@ -1945,8 +3162,21 @@
 
     <!-- Phone Lightbox Script -->
     <script>
-      function openPhoneLightbox() {
+      function openPhoneLightbox(images) {
         const lightbox = document.getElementById("phoneLightbox");
+        if (Array.isArray(images) && images.length > 0) {
+          const oldImgs = lightbox.querySelectorAll(".project__lightbox-img");
+          oldImgs.forEach((img) => img.remove());
+
+          images.forEach((src, idx) => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = "Mobile Screen " + (idx + 1);
+            img.className = "project__lightbox-img";
+            img.loading = "lazy";
+            lightbox.appendChild(img);
+          });
+        }
         lightbox.classList.add("active");
         document.body.style.overflow = "hidden";
       }
@@ -1967,6 +3197,13 @@
             lightbox.classList.remove("active");
             document.body.style.overflow = "";
           }
+          const activeModals = document.querySelectorAll(
+            ".project__modal.active",
+          );
+          activeModals.forEach((m) => {
+            m.classList.remove("active");
+            document.body.style.overflow = "";
+          });
         }
       });
     </script>
