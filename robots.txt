@@ -1,0 +1,7 @@
+# www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://myportfolio.cjaayy.dev/sitemap.xml

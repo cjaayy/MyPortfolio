@@ -5,39 +5,66 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"
     />
-    <!-- iOS specific -->
+    <!-- iOS Specific -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+
+    <!-- SEO Meta Tags -->
+    <title>Christian Jay Mandani | Full-Stack Developer & IT Student Portfolio</title>
     <meta
       name="description"
-      content="Portfolio website of CJay. A summary of professional experience,  skills, projects details and contact information."
+      content="Portfolio of Christian Jay Mandani (CJay). Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
     />
-    <title>CJCM - Portfolio</title>
+    <meta name="author" content="Christian Jay Mandani" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://myportfolio.cjaayy.dev/" />
 
     <!--==================== OPEN GRAPH META TAGS ===================== -->
-    <meta property="og:title" content="CJCM - Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myportfolio.cjaayy.dev/" />
+    <meta
+      property="og:title"
+      content="Christian Jay Mandani | Full-Stack Developer & IT Student Portfolio"
+    />
     <meta
       property="og:description"
-      content="Portfolio website of CJay. A summary of professional experience, skills, projects details and contact information."
+      content="Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
     />
-    <!--==================== TWITTER META TAGS ===================== -->
-    <meta name="twitter:title" content="CJCM - Portfolio" />
+    <meta
+      property="og:image"
+      content="https://myportfolio.cjaayy.dev/assets/images/og-preview.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Christian Jay Mandani Portfolio" />
+
+    <!--==================== TWITTER CARD META TAGS ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://myportfolio.cjaayy.dev/" />
+    <meta
+      name="twitter:title"
+      content="Christian Jay Mandani | Full-Stack Developer & IT Student Portfolio"
+    />
     <meta
       name="twitter:description"
-      content="Portfolio website of CJay. A summary of professional experience,  skills, projects details and contact information."
+      content="Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
     />
+    <meta
+      name="twitter:image"
+      content="https://myportfolio.cjaayy.dev/assets/images/og-preview.png"
+    />
+    <meta name="twitter:creator" content="@cjaym__" />
 
     <!--==================== UNICONS ====================-->
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <!-- ====================PWA================== -->
 
-    <!-- ============FAVICONS============== -->
+    <!--==================== FAVICONS ====================-->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -60,12 +87,28 @@
     <!--==================== SWIPER CSS ====================-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
-    <!--==================== CSS ====================-->
+    <!--==================== MAIN CSS ====================-->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <style>
       .back {
         background-color: var(--first-color);
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      }
+      .home__buttons,
+      .about__buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1.25rem;
+      }
+      .button--ghost {
+        background-color: transparent;
+        border: 2px solid var(--first-color);
+        color: var(--first-color);
+      }
+      .button--ghost:hover {
+        background-color: var(--first-color);
+        color: #fff;
       }
     </style>
   </head>
@@ -103,7 +146,7 @@
             </li>
 
             <li class="nav__item">
-              <a href="#Projects" class="nav__link noSelect">
+              <a href="#projects" class="nav__link noSelect">
                 <i class="uil uil-scenery nav__icon"></i> PROJECTS
               </a>
             </li>
@@ -126,14 +169,14 @@
               </a>
             </li>
           </ul>
-          <i class="uil uil-times nav__close noSelect" id="nav-close"></i>
+          <i class="uil uil-times nav__close noSelect" id="nav-close" aria-label="Close Navigation Menu"></i>
         </div>
 
         <div class="nav__btns">
           <!-- theme change button -->
-          <i class="uil uil-moon change-theme uil-sun" id="theme-button"></i>
+          <i class="uil uil-moon change-theme uil-sun" id="theme-button" aria-label="Toggle Dark/Light Mode"></i>
 
-          <div class="nav__toggle noSelect" id="nav-toggle">
+          <div class="nav__toggle noSelect" id="nav-toggle" aria-label="Open Navigation Menu">
             <i class="uil uil-apps"></i>
           </div>
         </div>
@@ -203,9 +246,28 @@
               </h1>
               <h3 class="home__subtitle">IT Student | Full-Stack Developer</h3>
               <p class="home__description">
-                I want to work with others to learn from them and gain more
-                knowledge.
+                Full-Stack Web & Mobile Developer specializing in PHP/Laravel,
+                JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions.
               </p>
+
+              <!-- Action Buttons -->
+              <div class="home__buttons">
+                <a href="#projects" class="button button--flex">
+                  View Projects <i class="uil uil-scenery button__icon"></i>
+                </a>
+                <a
+                  href="assets/pdf/CV.pdf.pdf"
+                  download="CV.pdf.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button button--flex button--ghost"
+                >
+                  Download CV <i class="uil uil-download-alt button__icon"></i>
+                </a>
+                <a href="#contact" class="button button--flex button--ghost">
+                  Contact Me <i class="uil uil-message button__icon"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="home__scroll">
@@ -227,9 +289,10 @@
       <div class="about__container container grid">
         <img
           src="assets/images/day.png"
-          alt=""
+          alt="Christian Jay Mandani Profile Photo"
           class="about__image"
           id="about-img"
+          loading="lazy"
         />
         <div class="about__data">
           <p class="about__description">
@@ -253,9 +316,20 @@
             technologies and working on side my projects.
           </p>
 
-          <a href="#contact" class="button button--flex">
-            Contact Me<i class="uil uil-message button__icon"></i>
-          </a>
+          <div class="about__buttons">
+            <a
+              href="assets/pdf/CV.pdf.pdf"
+              download="CV.pdf.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button--flex"
+            >
+              Download CV <i class="uil uil-download-alt button__icon"></i>
+            </a>
+            <a href="#contact" class="button button--flex button--ghost">
+              Contact Me <i class="uil uil-message button__icon"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -334,6 +408,7 @@
                       src="assets/img/skills/logo/pngkey.com-phillies-logo-png-528919.png"
                       alt="Polytechnic University of the Philippines Logo"
                       class="qualification__logo"
+                      loading="lazy"
                     />
                     <a
                       href="https://www.pup.edu.ph/"
@@ -360,6 +435,7 @@
                       src="assets/img/skills/logo/school_logo.png"
                       alt="MHNS - Camaya Campus Logo"
                       class="qualification__logo"
+                      loading="lazy"
                     />
                     <a
                       href="https://www.facebook.com/camayacampus/"
@@ -421,6 +497,7 @@
         <button
           class="skills__modal-close"
           onclick="closeSkillsModal(event, 'software')"
+          aria-label="Close Software Skills Modal"
         >
           <i class="uil uil-times"></i>
         </button>
@@ -702,6 +779,7 @@
         <button
           class="skills__modal-close"
           onclick="closeSkillsModal(event, 'hardware')"
+          aria-label="Close Hardware Skills Modal"
         >
           <i class="uil uil-times"></i>
         </button>
@@ -743,7 +821,7 @@
     </div>
 
     <!--==================== PROJECTS ====================-->
-    <section class="projects section fade-in" id="Projects">
+    <section class="projects section fade-in" id="projects">
       <div class="projects__container container">
         <h2 class="section__title">MY PROJECTS</h2>
 
@@ -1049,13 +1127,13 @@
               </div>
             </div>
 
-            <!-- Project 4 - SCREENSHOT 201438 -->
+            <!-- Project 4 - ISKOLAR NG MARIVELES -->
             <div class="swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
                   <img
                     src="assets/Projects/iskolar-ng-mariveles.png"
-                    alt="Iskolar ng Mariveles"
+                    alt="Iskolar ng Mariveles Scholarship Portal"
                     class="project__image"
                     loading="lazy"
                   />
@@ -1070,11 +1148,63 @@
                     </div>
                   </a>
                 </div>
+                <div class="project__info">
+                  <div class="project__header">
+                    <h3 class="project__title">ISKOLAR NG MARIVELES</h3>
+                    <span class="project__category">Scholarship Portal</span>
+                  </div>
+                  <p class="project__subtitle">Municipal Web Application</p>
+
+                  <div class="project__mobile-toggles">
+                    <button class="project__toggle-btn" data-target="description">
+                      Description
+                    </button>
+                    <button class="project__toggle-btn" data-target="tech">
+                      Tech Stack
+                    </button>
+                  </div>
+
+                  <div class="project__description">
+                    A web-based scholarship management portal designed to streamline 
+                    student application submissions, document verification, and 
+                    allowance distribution tracking for municipal scholars.
+                  </div>
+                  <div class="project__tech">
+                    <span class="project__tech-item" data-tooltip="Markup Language">
+                      <img class="project__tech-icon" src="assets/img/skills/html.svg" alt="html" /> HTML
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Styling">
+                      <img class="project__tech-icon" src="assets/img/skills/css.svg" alt="css" /> CSS
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Frontend Scripting">
+                      <img class="project__tech-icon" src="assets/img/skills/javascript.svg" alt="javascript" /> JavaScript
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Backend Logic">
+                      <img class="project__tech-icon" src="assets/img/skills/php.png" alt="php" /> PHP
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Database">
+                      <img class="project__tech-icon" src="assets/img/skills/mysql.png" alt="mysql" /> MySQL
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2024
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-check"></i> Completed
+                    </span>
+                  </div>
+                  <div class="project__actions">
+                    <a href="assets/Projects/iskolar-ng-mariveles.png" target="_blank" class="project__btn project__btn--primary">
+                      View Preview
+                    </a>
+                  </div>
+                </div>
                 <div class="project__glow"></div>
               </div>
             </div>
 
-            <!-- Project 5 - SCREENSHOT 201659 -->
+            <!-- Project 5 - MNHS CAMAYA CAMPUS GRADES MANAGEMENT SYSTEM -->
             <div class="swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
@@ -1095,17 +1225,69 @@
                     </div>
                   </a>
                 </div>
+                <div class="project__info">
+                  <div class="project__header">
+                    <h3 class="project__title">MNHS GRADES SYSTEM</h3>
+                    <span class="project__category">Academic System</span>
+                  </div>
+                  <p class="project__subtitle">School Grade Management</p>
+
+                  <div class="project__mobile-toggles">
+                    <button class="project__toggle-btn" data-target="description">
+                      Description
+                    </button>
+                    <button class="project__toggle-btn" data-target="tech">
+                      Tech Stack
+                    </button>
+                  </div>
+
+                  <div class="project__description">
+                    An automated grade management system allowing educators and 
+                    administrators to compute quarterly grades, generate report 
+                    cards, and store academic student records securely.
+                  </div>
+                  <div class="project__tech">
+                    <span class="project__tech-item" data-tooltip="Markup Language">
+                      <img class="project__tech-icon" src="assets/img/skills/html.svg" alt="html" /> HTML
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Styling">
+                      <img class="project__tech-icon" src="assets/img/skills/css.svg" alt="css" /> CSS
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Frontend Framework">
+                      <img class="project__tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstrap" /> Bootstrap
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Backend Logic">
+                      <img class="project__tech-icon" src="assets/img/skills/php.png" alt="php" /> PHP
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Database">
+                      <img class="project__tech-icon" src="assets/img/skills/mysql.png" alt="mysql" /> MySQL
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2024
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-check"></i> Completed
+                    </span>
+                  </div>
+                  <div class="project__actions">
+                    <a href="assets/Projects/mnhs-camaya-campus-grades-management-system copy.png" target="_blank" class="project__btn project__btn--primary">
+                      View Preview
+                    </a>
+                  </div>
+                </div>
                 <div class="project__glow"></div>
               </div>
             </div>
 
-            <!-- Project 7 - SCREENSHOT 202016 -->
+            <!-- Project 6 - PUP BATAAN UGNAY -->
             <div class="swiper-slide">
               <div class="project__card">
                 <div class="project__image-container">
                   <img
                     src="assets/Projects/pup-bataanu-ugnay.png"
-                    alt="PUP Bataanu Ugnay"
+                    alt="PUP Bataan Ugnay Institutional Portal"
                     class="project__image"
                     loading="lazy"
                   />
@@ -1119,6 +1301,58 @@
                       <span>Preview</span>
                     </div>
                   </a>
+                </div>
+                <div class="project__info">
+                  <div class="project__header">
+                    <h3 class="project__title">PUP BATAAN UGNAY</h3>
+                    <span class="project__category">Institutional Portal</span>
+                  </div>
+                  <p class="project__subtitle">Campus Community Platform</p>
+
+                  <div class="project__mobile-toggles">
+                    <button class="project__toggle-btn" data-target="description">
+                      Description
+                    </button>
+                    <button class="project__toggle-btn" data-target="tech">
+                      Tech Stack
+                    </button>
+                  </div>
+
+                  <div class="project__description">
+                    A centralized campus web portal dedicated to facilitating university 
+                    news broadcasts, event announcements, student organization activities, 
+                    and institutional updates.
+                  </div>
+                  <div class="project__tech">
+                    <span class="project__tech-item" data-tooltip="Markup Language">
+                      <img class="project__tech-icon" src="assets/img/skills/html.svg" alt="html" /> HTML
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Styling">
+                      <img class="project__tech-icon" src="assets/img/skills/css.svg" alt="css" /> CSS
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Frontend Scripting">
+                      <img class="project__tech-icon" src="assets/img/skills/javascript.svg" alt="javascript" /> JavaScript
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Backend Logic">
+                      <img class="project__tech-icon" src="assets/img/skills/php.png" alt="php" /> PHP
+                    </span>
+                    <span class="project__tech-item" data-tooltip="Database">
+                      <img class="project__tech-icon" src="assets/img/skills/mysql.png" alt="mysql" /> MySQL
+                    </span>
+                  </div>
+                  <div class="project__meta">
+                    <span class="project__meta-item" title="Project Year">
+                      <i class="uil uil-calendar-alt"></i> 2025
+                    </span>
+                    <span class="project__meta-item" title="Status">
+                      <i class="uil uil-check"></i> Completed
+                    </span>
+                  </div>
+                  <div class="project__actions">
+                    <a href="assets/Projects/pup-bataanu-ugnay.png" target="_blank" class="project__btn project__btn--primary">
+                      View Preview
+                    </a>
+                  </div>
                 </div>
                 <div class="project__glow"></div>
               </div>
@@ -1274,8 +1508,9 @@
                 <div class="certificate__image-container">
                   <img
                     src="assets/Certificates/Certificate_of_Completion/Certificate_of_Completion_page-0001.jpg"
-                    alt="Certificate of Completion"
+                    alt="Introduction to CSS Certificate of Completion"
                     class="certificate__image"
+                    loading="lazy"
                   />
                   <div class="certificate__overlay"></div>
                 </div>
@@ -1302,8 +1537,9 @@
                 <div class="certificate__image-container">
                   <img
                     src="assets/Certificates/Certificate_of_Completion-1/Certificate_of_Completion (1)_page-0001.jpg"
-                    alt="Advanced Programming Certificate"
+                    alt="Setting Up Computer Networks Certificate of Completion"
                     class="certificate__image"
+                    loading="lazy"
                   />
                   <div class="certificate__overlay"></div>
                 </div>
@@ -1332,8 +1568,9 @@
                 <div class="certificate__image-container">
                   <img
                     src="assets/Certificates/Certificate_of_Completion_NEW/Certificate_of_Completion_NEW_page-0001.jpg"
-                    alt="Web Development Certificate"
+                    alt="Installing and Configuring Computer Systems Certificate of Completion"
                     class="certificate__image"
+                    loading="lazy"
                   />
                   <div class="certificate__overlay"></div>
                 </div>
@@ -1362,8 +1599,9 @@
                 <div class="certificate__image-container">
                   <img
                     src="assets/Certificates/Certificate_of_Completion_NEW-1/Certificate_of_Completion_NEW (1)_page-0001.jpg"
-                    alt="Advanced Web Technologies Certificate"
+                    alt="Setting Up Computer Servers Certificate of Completion"
                     class="certificate__image"
+                    loading="lazy"
                   />
                   <div class="certificate__overlay"></div>
                 </div>
@@ -1392,8 +1630,9 @@
                 <div class="certificate__image-container">
                   <img
                     src="assets/Certificates/Certificate_of_Completion_NEW-2/Certificate_of_Completion_NEW (2)_page-0001.jpg"
-                    alt="Professional Development Certificate"
+                    alt="Maintaining Computer Systems and Networks Certificate of Completion"
                     class="certificate__image"
+                    loading="lazy"
                   />
                   <div class="certificate__overlay"></div>
                 </div>
@@ -1422,8 +1661,9 @@
                 <div class="certificate__image-container">
                   <img
                     src="assets/Certificates/Earth&Shore/1000035889 (1).jpg"
-                    alt="Earth & Shore Certificate"
+                    alt="Earth and Shore Tourism Ventures Corp Certificate of Completion"
                     class="certificate__image"
+                    loading="lazy"
                   />
                   <div class="certificate__overlay"></div>
                 </div>
@@ -1558,8 +1798,8 @@
       <div class="footer__bg">
         <div class="footer__container container grid">
           <div>
-            <h1 class="title-highlight">CJAY</h1>
-            <span class="footer__subtitle">IT Student</span>
+            <h2 class="title-highlight" style="font-size: var(--h1-font-size);">CJAY</h2>
+            <span class="footer__subtitle">IT Student & Full-Stack Developer</span>
           </div>
 
           <div class="footer__socials">
@@ -1619,7 +1859,7 @@
 
     <!--==================== SCROLL TOP ====================-->
 
-    <a href="#" class="scrollup show-scroll" id="scroll-up">
+    <a href="#" class="scrollup show-scroll" id="scroll-up" aria-label="Scroll back to top">
       <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
@@ -1650,12 +1890,12 @@
       var hexArray = [
         "#e91f64",
         "#9c28b0",
-        "#282bb0",
+        "#2563eb",
         "#58acdc",
-        "#f1c84f",
-        "#61c689",
+        "#059669",
         "#d2330b",
         "#922fe9",
+        "#0284c7",
       ];
       var randomColor = hexArray[Math.floor(Math.random() * hexArray.length)];
       // Set the value of variable --blue to another value (in this case "lightblue")
@@ -1679,11 +1919,13 @@
         src="assets/Projects/1000040631.jpg"
         alt="One Stop Editing App - Screen 1"
         class="project__lightbox-img"
+        loading="lazy"
       />
       <img
         src="assets/Projects/1000040632.jpg"
         alt="One Stop Editing App - Screen 2"
         class="project__lightbox-img"
+        loading="lazy"
       />
     </div>
 
