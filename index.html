@@ -95,7 +95,14 @@
         background-color: var(--first-color);
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
       }
-      .home__buttons,
+      .home__buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        flex-wrap: nowrap;
+        margin-top: 1.25rem;
+        width: 100%;
+      }
       .about__buttons {
         display: flex;
         gap: 1rem;
@@ -110,6 +117,109 @@
       .button--ghost:hover {
         background-color: var(--first-color);
         color: #fff;
+      }
+
+      /*==================== BUTTONS ONE LINE & MERGED CV ====================*/
+      .home__buttons .button {
+        padding: 0.75rem 1rem;
+        font-size: clamp(0.82rem, 2vw, var(--normal-font-size));
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .button-group {
+        display: inline-flex;
+        align-items: stretch;
+        border: 2px solid var(--first-color);
+        border-radius: 0.5rem;
+        background-color: transparent;
+        overflow: hidden;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: border-color 0.3s ease;
+      }
+      .button-group:hover {
+        border-color: var(--first-color-alt);
+      }
+      .button-group__item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 0.95rem;
+        color: var(--first-color);
+        font-weight: var(--font-medium);
+        font-size: clamp(0.82rem, 2vw, var(--normal-font-size));
+        background-color: transparent;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .button-group__item:hover {
+        background-color: var(--first-color);
+        color: #fff;
+      }
+      .button-group__item:hover .button__icon {
+        color: #fff;
+      }
+      .button-group__divider {
+        width: 1.5px;
+        background-color: var(--first-color);
+        opacity: 0.4;
+      }
+      .button-group__item--download {
+        padding: 0.75rem 0.85rem;
+      }
+      .button-group__item--download .button__icon {
+        margin-left: var(--mb-0-5);
+      }
+
+      @media screen and (min-width: 768px) {
+        .home__content {
+          grid-template-columns: max-content 1fr max-content;
+        }
+        .home__data {
+          overflow: visible;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .home__buttons {
+          gap: 0.45rem;
+        }
+        .home__buttons .button {
+          padding: 0.65rem 0.75rem;
+          font-size: 0.8rem;
+        }
+        .button-group__item {
+          padding: 0.65rem 0.75rem;
+          font-size: 0.8rem;
+        }
+        .button-group__item--download {
+          padding: 0.65rem 0.65rem;
+        }
+        .button-group__dl-text {
+          display: none;
+        }
+        .button-group__item--download .button__icon {
+          margin-left: 0;
+        }
+      }
+
+      @media screen and (max-width: 380px) {
+        .home__buttons {
+          gap: 0.3rem;
+        }
+        .home__buttons .button {
+          padding: 0.55rem 0.6rem;
+          font-size: 0.75rem;
+        }
+        .button-group__item {
+          padding: 0.55rem 0.6rem;
+          font-size: 0.75rem;
+        }
       }
 
       /*==================== SWIPER PROJECTS CAROUSEL ====================*/
@@ -1305,15 +1415,30 @@
                 <a href="#projects" class="button button--flex button--ghost">
                   View Projects <i class="uil uil-scenery button__icon"></i>
                 </a>
-                <a
-                  href="assets/pdf/Christian_Jay_Mandani_CV.pdf"
-                  download="Christian_Jay_Mandani_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button button--flex button--ghost"
-                >
-                  Download CV <i class="uil uil-download-alt button__icon"></i>
-                </a>
+                <div class="button-group" id="cv-btn-group">
+                  <a
+                    href="assets/pdf/CJCM.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button-group__item button-group__item--view"
+                    id="view-cv-btn"
+                    title="View CV in browser"
+                  >
+                    View CV <i class="uil uil-eye button__icon"></i>
+                  </a>
+                  <span class="button-group__divider"></span>
+                  <a
+                    href="assets/pdf/CJCM.pdf"
+                    download="CJCM.pdf"
+                    class="button-group__item button-group__item--download"
+                    id="download-cv-btn"
+                    title="Download CV"
+                    aria-label="Download CV"
+                  >
+                    <span class="button-group__dl-text">Download</span>
+                    <i class="uil uil-download-alt button__icon"></i>
+                  </a>
+                </div>
                 <a href="#contact" class="button button--flex button--ghost">
                   Contact Me <i class="uil uil-message button__icon"></i>
                 </a>
