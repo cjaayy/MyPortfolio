@@ -1138,6 +1138,7 @@ header {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  overscroll-behavior: contain;
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease;
@@ -1156,6 +1157,8 @@ header {
   width: 90%;
   max-height: 85vh;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   position: relative;
   transform: scale(0.85);
   transition: transform 0.3s ease;
