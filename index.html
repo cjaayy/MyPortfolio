@@ -3760,6 +3760,7 @@
         if (modal) {
           modal.classList.add("active");
           document.body.style.overflow = "hidden";
+          document.documentElement.style.overflow = "hidden";
         }
       }
 
@@ -3774,19 +3775,25 @@
         if (modal) {
           modal.classList.remove("active");
           document.body.style.overflow = "";
+          document.documentElement.style.overflow = "";
         }
       }
     </script>
     <script>
       function openSkillsModal(type) {
         const modal = document.getElementById("skillsModal-" + type);
+        if (!modal) return;
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
       }
       function closeSkillsModal(e, type) {
         const modal = document.getElementById("skillsModal-" + type);
-        modal.classList.remove("active");
+        if (modal) {
+          modal.classList.remove("active");
+        }
         document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
       }
     </script>
 
@@ -3809,6 +3816,7 @@
         }
         lightbox.classList.add("active");
         document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
       }
 
       function closePhoneLightbox(e) {
@@ -3817,6 +3825,7 @@
         const lightbox = document.getElementById("phoneLightbox");
         lightbox.classList.remove("active");
         document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
       }
 
       // Close on Escape key
@@ -3826,6 +3835,7 @@
           if (lightbox && lightbox.classList.contains("active")) {
             lightbox.classList.remove("active");
             document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
           }
           const activeModals = document.querySelectorAll(
             ".project__modal.active, .skills__modal.active",
@@ -3833,6 +3843,7 @@
           activeModals.forEach((m) => {
             m.classList.remove("active");
             document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
           });
         }
       });
