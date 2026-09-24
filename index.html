@@ -13,8 +13,7 @@
     />
 
     <!-- SEO Meta Tags -->
-    <title>
-      CJCM - Portfolio</title>
+    <title>CJCM - Portfolio</title>
     <meta
       name="description"
       content="Portfolio of Christian Jay Mandani (CJay). Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
@@ -156,7 +155,9 @@
         font-weight: var(--font-medium);
         font-size: 0.85rem;
         background-color: transparent;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
         text-decoration: none;
         cursor: pointer;
         white-space: nowrap;
@@ -242,7 +243,9 @@
         border-top: 1px solid rgba(125, 125, 125, 0.15);
         padding: 2.5rem 0 3rem;
         position: relative;
-        transition: background-color 0.4s ease, border-color 0.4s ease;
+        transition:
+          background-color 0.4s ease,
+          border-color 0.4s ease;
       }
       .footer__bg::before {
         content: "";
@@ -286,7 +289,9 @@
         align-items: center;
         justify-content: center;
         margin-right: 0;
-        transition: color 0.3s ease, transform 0.3s ease;
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
       }
       .footer__social:hover {
         color: var(--first-color-alt);
@@ -1748,6 +1753,65 @@
             />
             <span>Hardware</span>
           </button>
+        </div>
+
+        <div class="skills__github-card" aria-label="GitHub contribution chart">
+          <div class="skills__github-header">
+            <h3 class="skills__github-title">
+              0 contributions in <span>2026</span>
+            </h3>
+            <div class="skills__github-controls">
+              <button class="skills__github-year" type="button">2026</button>
+            </div>
+          </div>
+
+          <div class="skills__github-panel">
+            <div class="skills__github-calendar-wrapper">
+              <div class="skills__github-months" aria-hidden="true">
+                <span>Jan</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+                <span>Jul</span>
+                <span>Aug</span>
+                <span>Sep</span>
+                <span>Oct</span>
+                <span>Nov</span>
+                <span>Dec</span>
+              </div>
+
+              <div class="skills__github-calendar-body">
+                <div class="skills__github-weekdays" aria-hidden="true">
+                  <span>Mon</span>
+                  <span>Wed</span>
+                  <span>Fri</span>
+                </div>
+
+                <div
+                  class="skills__github-heatmap"
+                  id="skillsGitHubHeatmap"
+                  aria-label="Contribution heatmap"
+                ></div>
+              </div>
+            </div>
+
+            <div class="skills__github-year-list" aria-label="Recent years">
+              <button class="skills__github-year-option active" type="button">
+                2026
+              </button>
+              <button class="skills__github-year-option" type="button">
+                2025
+              </button>
+              <button class="skills__github-year-option" type="button">
+                2024
+              </button>
+              <button class="skills__github-year-option" type="button">
+                2023
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -212,7 +212,7 @@ img {
 
 /* Section divider */
 .section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -220,7 +220,12 @@ img {
   width: 90%;
   max-width: 600px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--text-color-light), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--text-color-light),
+    transparent
+  );
 }
 
 .section {
@@ -269,7 +274,7 @@ img {
     min-height: auto;
     padding: 2rem 0;
   }
-  
+
   .services.section,
   .contact.section {
     padding: 1.5rem 0;
@@ -324,14 +329,19 @@ img {
 }
 
 .section__title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--first-color), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--first-color),
+    transparent
+  );
   border-radius: 2px;
 }
 
@@ -832,7 +842,7 @@ header {
 
 /* Separator line between skills and projects */
 .skills.section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -840,7 +850,12 @@ header {
   width: 90%;
   max-width: 600px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--text-color-light), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--text-color-light),
+    transparent
+  );
 }
 
 .skills__wrapper {
@@ -858,6 +873,214 @@ header {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+}
+
+.skills__github-card {
+  position: relative;
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: 1.1rem 1.4rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(6, 9, 17, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.skills__github-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skills__github-title {
+  margin: 0;
+  color: #f3f4f6;
+  font-size: clamp(1.1rem, 2vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.skills__github-title span {
+  color: #f3f4f6;
+}
+
+.skills__github-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skills__github-year,
+.skills__github-year-option {
+  background: #2f6fe8;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.skills__github-year:hover,
+.skills__github-year-option:hover {
+  transform: translateY(-1px);
+}
+
+.skills__github-panel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding-top: 0.9rem;
+}
+
+.skills__github-calendar-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.skills__github-months {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.5rem 0.45rem;
+  margin-left: 2.2rem;
+  margin-bottom: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+}
+
+.skills__github-calendar-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.skills__github-weekdays {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 115px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  padding-top: 0.1rem;
+}
+
+.skills__github-heatmap {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 12px));
+  grid-template-rows: repeat(7, minmax(0, 12px));
+  grid-auto-flow: column;
+  gap: 4px;
+  flex: 1;
+  min-height: 115px;
+  padding: 0.55rem 0.55rem;
+  border-radius: 0.8rem;
+  background: rgba(13, 17, 24, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.skills__github-heatmap .skills__github-cell {
+  width: 12px;
+  height: 12px;
+  max-width: 12px;
+  max-height: 12px;
+  border-radius: 3px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.05);
+  box-sizing: border-box;
+}
+
+.skills__github-cell.level-0 {
+  background: rgba(22, 27, 34, 1);
+}
+
+.skills__github-cell.level-1 {
+  background: rgba(22, 119, 72, 0.55);
+}
+
+.skills__github-cell.level-2 {
+  background: rgba(35, 160, 89, 0.7);
+}
+
+.skills__github-cell.level-3 {
+  background: rgba(68, 203, 123, 0.82);
+}
+
+.skills__github-cell.level-4 {
+  background: rgba(99, 241, 167, 1);
+}
+
+.skills__github-year-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 82px;
+  padding-top: 0.4rem;
+}
+
+.skills__github-year-option {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  text-align: right;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.skills__github-year-option.active {
+  background: #2f6fe8;
+  color: #fff;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .skills__github-card {
+    padding: 1rem 0.9rem 0.8rem;
+  }
+
+  .skills__github-header,
+  .skills__github-panel,
+  .skills__github-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills__github-controls,
+  .skills__github-year-list {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .skills__github-year-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .skills__github-months {
+    margin-left: 2rem;
+    font-size: 0.7rem;
+  }
+
+  .skills__github-heatmap {
+    grid-template-columns: repeat(53, minmax(0, 10px));
+    gap: 3px;
+  }
+
+  .skills__github-heatmap .skills__github-cell {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .skills__popup-btn {
@@ -915,7 +1138,9 @@ header {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .skills__modal.active {
@@ -955,7 +1180,9 @@ header {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .skills__modal-close:hover {
@@ -1124,21 +1351,21 @@ header {
     gap: 1.5rem;
     padding: 0 0.5rem;
   }
-  
+
   .skills__category {
     padding: 1.25rem;
   }
-  
+
   .skills__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
-  
+
   .skills__icon-wrapper {
     width: 40px;
     height: 40px;
   }
-  
+
   .skills__icon {
     width: 26px;
     height: 26px;
@@ -1185,7 +1412,7 @@ header {
 }
 
 .qualification__button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1223,7 +1450,11 @@ header {
 }
 
 .qualification__button.qualification__active {
-  background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
+  background: linear-gradient(
+    135deg,
+    var(--first-color),
+    var(--first-color-alt)
+  );
   color: #fff;
   border-color: var(--first-color);
   box-shadow: 0 8px 30px rgba(88, 172, 220, 0.35);
@@ -1246,7 +1477,7 @@ header {
 }
 
 .qualification__timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 4.5px;
   top: 0;
@@ -1271,7 +1502,7 @@ header {
 }
 
 .qualification__card::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -30px;
   top: 1.75rem;
@@ -1296,7 +1527,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
+  background: linear-gradient(
+    135deg,
+    var(--first-color),
+    var(--first-color-alt)
+  );
   border-radius: 0.75rem;
   color: #fff;
   font-size: 1.5rem;
@@ -1339,7 +1574,7 @@ header {
 }
 
 .qualification__badge::before {
-  content: '-';
+  content: "-";
   margin-right: 0.25rem;
 }
 
@@ -2135,7 +2370,9 @@ header {
   gap: 1.5rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   padding: 2rem;
   cursor: pointer;
 }
@@ -2669,13 +2906,17 @@ body.dark-theme .skills__modal-title-icon {
 }
 
 .certificate__card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+  background: linear-gradient(
+    90deg,
+    var(--first-color),
+    var(--first-color-alt)
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -3022,7 +3263,9 @@ textarea.contact__input {
   border-top: 1px solid rgba(125, 125, 125, 0.15);
   padding: 2.5rem 0 3rem;
   position: relative;
-  transition: background-color 0.4s ease, border-color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
 }
 .footer__bg::before {
   content: "";

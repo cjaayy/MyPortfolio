@@ -238,6 +238,240 @@ else if (
 }
 
 const homeImg = document.getElementById("home-img");
+
+const githubUsername = "cjaayy";
+const githubYearButtons = Array.from(
+  document.querySelectorAll(".skills__github-year-option"),
+);
+const githubMainYearButton = document.querySelector(".skills__github-year");
+const githubTitle = document.querySelector(".skills__github-title");
+const githubHeatmap = document.getElementById("skillsGitHubHeatmap");
+
+const formatContributionCount = (count) => {
+  if (!Number.isFinite(count)) return "0";
+  return new Intl.NumberFormat("en-US").format(count);
+};
+
+const getContributionLevel = (count) => {
+  if (!count || count <= 0) return 0;
+  if (count <= 2) return 1;
+  if (count <= 5) return 2;
+  if (count <= 8) return 3;
+  return 4;
+};
+
+const renderGitHubHeatmapFromData = (weeks) => {
+  if (!githubHeatmap) return;
+
+  const cells = [];
+
+  if (!Array.isArray(weeks) || weeks.length === 0) {
+    const fallback = document.createElement("span");
+    fallback.className = "skills__github-cell level-0";
+    githubHeatmap.replaceChildren(fallback);
+    return;
+  }
+
+  for (const week of weeks) {
+    const days = week.contributionDays || week.days || week;
+    if (!Array.isArray(days)) continue;
+
+    for (const day of days) {
+      const count = Number(day.count || 0);
+      const level = getContributionLevel(count);
+      const cell = document.createElement("span");
+      cell.className = `skills__github-cell level-${level}`;
+      cell.title = `${day.date || "unknown"}: ${count} contributions`;
+      cells.push(cell);
+    }
+  }
+
+  githubHeatmap.replaceChildren(...cells);
+};
+
+const getGitHubContributionsUrl = (username, year) => {
+  const from = `${year}-01-01`;
+  const to = `${year}-12-31`;
+  return `https://r.jina.ai/http://https://github.com/users/${username}/contributions?from=${from}&to=${to}`;
+};
+
+const parseContributionMarkdown = (markdown, year) => {
+  const text = String(markdown || "");
+  const totalMatch = text.match(/##\s*([\d,]+)\s+contributions?\s+in\s+\d{4}/i);
+  const total = totalMatch ? Number(totalMatch[1].replace(/,/g, "")) : 0;
+  const countMap = new Map();
+
+  const dayPattern =
+    /(No contributions on|([0-9]+)\s+contributions? on)\s+([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th))/g;
+  let match;
+
+  while ((match = dayPattern.exec(text)) !== null) {
+    const label = match[3];
+    const monthName = label.replace(/\s+\d+(?:st|nd|rd|th)$/i, "");
+    const dayNumber = Number.parseInt(label.match(/\d+/)[0], 10);
+    const date = new Date(`${year} ${monthName} ${dayNumber}`);
+
+    if (Number.isNaN(date.getTime())) continue;
+
+    const normalizedDate = date.toISOString().slice(0, 10);
+    const count = match[2] ? Number(match[2]) : 0;
+    countMap.set(normalizedDate, count);
+  }
+
+  const daily = [];
+  const start = new Date(`${year}-01-01T00:00:00Z`);
+  const end = new Date(`${year}-12-31T00:00:00Z`);
+
+  for (
+    let cursor = new Date(start);
+    cursor <= end;
+    cursor.setUTCDate(cursor.getUTCDate() + 1)
+  ) {
+    const iso = cursor.toISOString().slice(0, 10);
+    daily.push({
+      date: iso,
+      count: Number(countMap.get(iso) || 0),
+    });
+  }
+
+  const weeks = [];
+  for (let i = 0; i < daily.length; i += 7) {
+    weeks.push({ contributionDays: daily.slice(i, i + 7) });
+  }
+
+  return { total, weeks };
+};
+
+const parseGitHubContributionPage = (htmlOrMarkdown, year) => {
+  if (!htmlOrMarkdown) return { total: 0, weeks: [] };
+
+  const text = String(htmlOrMarkdown);
+  if (text.includes("##") || text.includes("contributions in")) {
+    return parseContributionMarkdown(text, year);
+  }
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, "text/html");
+  const titleNode = doc.querySelector("#js-contribution-activity-description");
+  const titleText = titleNode ? titleNode.textContent.trim() : "";
+  const totalMatch = titleText.match(/(\d[\d,]*)/);
+  const total = totalMatch ? Number(totalMatch[1].replace(/,/g, "")) : 0;
+
+  const rects = Array.from(
+    doc.querySelectorAll(".js-calendar-graph rect[data-date]"),
+  );
+  if (!rects.length) {
+    return { total, weeks: [] };
+  }
+
+  const days = rects
+    .map((rect) => {
+      const date = rect.getAttribute("data-date") || rect.dataset.date;
+      const count = Number(
+        rect.getAttribute("data-count") || rect.dataset.count || 0,
+      );
+
+      if (!date) return null;
+      return { date, count };
+    })
+    .filter(Boolean)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  const weeks = [];
+  for (let i = 0; i < days.length; i += 7) {
+    weeks.push({ contributionDays: days.slice(i, i + 7) });
+  }
+
+  return { total, weeks };
+};
+
+const normalizeGitHubData = (data) => {
+  if (!data) return { total: 0, weeks: [] };
+
+  if (Array.isArray(data.weeks)) {
+    return {
+      total: Number(data.total || data.totalContributions || 0),
+      weeks: data.weeks,
+    };
+  }
+
+  if (Array.isArray(data.contributions)) {
+    const contributions = data.contributions.map((item) => ({
+      date: item.date || item.day || item.created_at,
+      count: Number(item.count || item.contributionCount || 0),
+    }));
+
+    const weeks = [];
+    const ordered = [...contributions].sort(
+      (a, b) => new Date(a.date) - new Date(b.date),
+    );
+
+    for (let i = 0; i < ordered.length; i += 7) {
+      weeks.push({ contributionDays: ordered.slice(i, i + 7) });
+    }
+
+    return {
+      total: Number(data.total || data.totalContributions || 0),
+      weeks,
+    };
+  }
+
+  return { total: 0, weeks: [] };
+};
+
+const updateGitHubCard = async (year) => {
+  if (!githubTitle || !githubMainYearButton) return;
+
+  githubMainYearButton.textContent = year;
+  githubTitle.innerHTML = `Loading contributions in <span>${year}</span>`;
+
+  githubYearButtons.forEach((button) => {
+    const isActive = Number(button.textContent.trim()) === Number(year);
+    button.classList.toggle("active", isActive);
+  });
+
+  try {
+    const response = await fetch(
+      getGitHubContributionsUrl(githubUsername, year),
+      {
+        cache: "no-store",
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    const html = await response.text();
+    const parsed = parseGitHubContributionPage(html, year);
+    const normalized = normalizeGitHubData(parsed);
+
+    githubTitle.innerHTML = `${formatContributionCount(normalized.total)} contributions in <span>${year}</span>`;
+    renderGitHubHeatmapFromData(normalized.weeks);
+  } catch (error) {
+    githubTitle.innerHTML = `0 contributions in <span>${year}</span>`;
+    renderGitHubHeatmapFromData([]);
+  }
+};
+
+const githubYears = [2026, 2025, 2024, 2023];
+if (githubYearButtons.length) {
+  githubYearButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedYear = Number(button.textContent.trim());
+      updateGitHubCard(selectedYear);
+    });
+  });
+}
+
+if (githubMainYearButton) {
+  githubMainYearButton.addEventListener("click", () => {
+    const year = Number(githubMainYearButton.textContent.trim());
+    updateGitHubCard(year);
+  });
+}
+
+updateGitHubCard(githubYears[0]);
 const aboutImg = document.getElementById("about-img");
 
 function setHomeImage(theme) {
