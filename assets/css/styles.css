@@ -896,6 +896,27 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.skills__github-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skills__github-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--first-color);
+}
+
+.skills__github-label i {
+  font-size: 1rem;
+}
+
 .skills__github-title {
   margin: 0;
   color: #f3f4f6;
@@ -945,58 +966,79 @@ header {
 .skills__github-calendar-wrapper {
   flex: 1;
   min-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.skills__github-calendar-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+.skills__github-calendar-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.skills__github-calendar-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
 }
 
 .skills__github-months {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 0.5rem 0.45rem;
-  margin-left: 2.2rem;
-  margin-bottom: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  width: calc(53 * 11px + 52 * 3px);
+  margin-left: 2rem;
+  margin-bottom: 0.6rem;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .skills__github-calendar-body {
   display: flex;
   align-items: flex-start;
   gap: 0.7rem;
+  width: max-content;
 }
 
 .skills__github-weekdays {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 115px;
+  height: 95px;
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.68rem;
-  padding-top: 0.1rem;
+  margin-top: 0.55rem;
 }
 
 .skills__github-heatmap {
   display: grid;
-  grid-template-columns: repeat(53, minmax(0, 12px));
-  grid-template-rows: repeat(7, minmax(0, 12px));
+  grid-template-columns: repeat(53, 11px);
+  grid-template-rows: repeat(7, 11px);
   grid-auto-flow: column;
-  gap: 4px;
-  flex: 1;
-  min-height: 115px;
+  gap: 3px;
+  width: max-content;
   padding: 0.55rem 0.55rem;
   border-radius: 0.8rem;
   background: rgba(13, 17, 24, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  overflow: hidden;
 }
 
 .skills__github-heatmap .skills__github-cell {
-  width: 12px;
-  height: 12px;
-  max-width: 12px;
-  max-height: 12px;
-  border-radius: 3px;
+  display: block;
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  min-height: 11px;
+  max-width: 11px;
+  max-height: 11px;
+  border-radius: 2.5px;
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(148, 163, 184, 0.05);
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .skills__github-cell.level-0 {
@@ -1049,37 +1091,100 @@ header {
     padding: 1rem 0.9rem 0.8rem;
   }
 
-  .skills__github-header,
+  .skills__github-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .skills__github-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .skills__github-controls {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+
   .skills__github-panel,
   .skills__github-footer {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .skills__github-controls,
   .skills__github-year-list {
     width: 100%;
     justify-content: flex-start;
-  }
-
-  .skills__github-year-list {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
+  .skills__github-calendar-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.6rem;
+  }
+
+  .skills__github-calendar-body {
+    width: max-content;
+  }
+
   .skills__github-months {
-    margin-left: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: calc(53 * 10px + 52 * 3px);
+    margin-left: 1.8rem;
     font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .skills__github-weekdays {
+    height: 88px;
+    font-size: 0.62rem;
+    margin-top: 0.45rem;
   }
 
   .skills__github-heatmap {
-    grid-template-columns: repeat(53, minmax(0, 10px));
+    grid-template-columns: repeat(53, 10px);
+    grid-template-rows: repeat(7, 10px);
     gap: 3px;
+    width: max-content;
+    padding: 0.45rem;
   }
 
   .skills__github-heatmap .skills__github-cell {
     width: 10px;
     height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 10px;
+    max-height: 10px;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills__github-label {
+    font-size: 0.75rem;
+  }
+
+  .skills__github-title {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .skills__github-year {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.82rem;
   }
 }
 
