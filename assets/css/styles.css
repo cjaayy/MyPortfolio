@@ -446,6 +446,23 @@ header {
   color: var(--first-color);
 }
 
+.nav__logo-img {
+  height: 2.3rem;
+  max-height: calc(var(--header-height) - 0.5rem);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-theme .nav__logo-img {
+  filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.15));
+}
+
+.nav__logo:hover .nav__logo-img {
+  transform: scale(1.05);
+}
+
 .nav__toggle {
   font-size: clamp(1rem, 3.5vw, 1.1rem);
   cursor: pointer;
