@@ -6,6 +6,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"
     />
     <!-- iOS Specific -->
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
@@ -16,7 +17,7 @@
     <title>CJCM - Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Christian Jay Mandani (CJay). Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
+      content="Portfolio of Christian Jay Mandani (CJay). Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript/TypeScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
     />
     <meta name="author" content="Christian Jay Mandani" />
     <meta name="robots" content="index, follow" />
@@ -31,7 +32,7 @@
     />
     <meta
       property="og:description"
-      content="Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
+      content="Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript/TypeScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
     />
     <meta
       property="og:image"
@@ -50,7 +51,7 @@
     />
     <meta
       name="twitter:description"
-      content="Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
+      content="Full-Stack Web & Mobile Developer specializing in PHP/Laravel, JavaScript/TypeScript, and Flutter. Building efficient, scalable, and user-centric digital solutions."
     />
     <meta
       name="twitter:image"
@@ -61,28 +62,28 @@
     <!--==================== UNICONS ====================-->
     <link
       rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+      href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.css"
     />
 
     <!--==================== FAVICONS ====================-->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/images/CJay.png"
+      href="assets/MyImages/CJay.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/images/CJay.png"
+      href="assets/MyImages/CJay.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/images/CJay.png"
+      href="assets/MyImages/CJay.png"
     />
-    <link rel="icon" type="image/png" href="assets/images/CJay.png" />
+    <link rel="icon" type="image/png" href="assets/MyImages/CJay.png" />
 
     <!--==================== SWIPER CSS ====================-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
@@ -383,7 +384,7 @@
         justify-content: space-between;
         align-items: baseline;
         gap: 0.5rem;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.85rem;
       }
 
       .project__title {
@@ -415,32 +416,45 @@
         flex-grow: 1;
       }
 
-      /* Monochromatic Tech Tags */
+      /* Tech Stack (Skills Software Style) */
       .project__tech {
-        display: flex;
+        display: flex !important;
         flex-wrap: wrap;
-        gap: 0.4rem;
+        gap: 0.6rem;
         margin-bottom: 1.25rem;
+        padding: 0 !important;
+        background: transparent !important;
       }
 
       .project__tech-item {
         display: inline-flex;
         align-items: center;
-        gap: 0.35rem;
-        padding: 0.25rem 0.6rem;
-        border-radius: 6px;
+        justify-content: center;
+        gap: 0.45rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 8px;
         font-size: var(--smaller-font-size);
         font-weight: 500;
-        background-color: rgba(125, 125, 125, 0.08);
-        color: var(--text-color);
-        border: 1px solid rgba(125, 125, 125, 0.12);
+        background: var(--body-color) !important;
+        color: var(--title-color) !important;
+        border: 1.5px solid rgba(125, 125, 125, 0.35);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .project__tech-item:hover {
+        transform: translateY(-2px);
+        border-color: var(--first-color);
       }
 
       .project__tech-icon {
-        width: 14px;
-        height: 14px;
-        filter: grayscale(100%);
-        opacity: 0.85;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        filter: none !important;
+        opacity: 1 !important;
       }
 
       .project__actions {
@@ -677,7 +691,7 @@
         }
 
         .project__header {
-          margin-bottom: 0.15rem;
+          margin-bottom: 0.65rem;
         }
 
         .project__title {
@@ -696,13 +710,19 @@
         }
 
         .project__tech {
-          gap: 0.35rem;
+          display: flex !important;
+          gap: 0.45rem;
           margin-bottom: 0.85rem;
         }
 
         .project__tech-item {
-          padding: 0.2rem 0.45rem;
-          font-size: 0.68rem;
+          padding: 0.35rem 0.65rem;
+          font-size: 0.75rem;
+        }
+
+        .project__tech-icon {
+          width: 18px;
+          height: 18px;
         }
 
         .project__actions {
@@ -1360,12 +1380,12 @@
       <nav class="nav container">
         <a href="#" class="nav__logo noSelect" aria-label="CJAY">
           <img
-            src="assets/logo/cjay-logo-dark.png"
+            src="assets/MyLogo/cjay-logo-dark.png"
             alt="CJAY Logo"
             class="nav__logo-img nav__logo-img--dark"
           />
           <img
-            src="assets/logo/cjay-logo-transparent.png"
+            src="assets/MyLogo/cjay-logo-transparent.png"
             alt="CJAY Logo"
             class="nav__logo-img nav__logo-img--light"
           />
@@ -1500,7 +1520,7 @@
             </div>
 
             <div class="home__img">
-              <img class="back" id="home-img" src="assets/images/CJay.png" />
+              <img class="back" id="home-img" src="assets/MyImages/CJay.png" />
             </div>
 
             <div class="home__data">
@@ -1511,8 +1531,8 @@
               <h3 class="home__subtitle">IT Student | Full-Stack Developer</h3>
               <p class="home__description">
                 Full-Stack Web & Mobile Developer specializing in PHP/Laravel,
-                JavaScript, and Flutter. Building efficient, scalable, and
-                user-centric digital solutions.
+                JavaScript/TypeScript, and Flutter. Building efficient,
+                scalable, and user-centric digital solutions.
               </p>
 
               <!-- Action Buttons -->
@@ -1522,7 +1542,7 @@
                 </a>
                 <div class="button-group" id="cv-btn-group">
                   <a
-                    href="assets/pdf/CJCM.pdf"
+                    href="assets/CVResume/CV.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="button-group__item button-group__item--view"
@@ -1533,8 +1553,8 @@
                   </a>
                   <span class="button-group__divider"></span>
                   <a
-                    href="assets/pdf/CJCM.pdf"
-                    download="CJCM.pdf"
+                    href="assets/CVResume/CV.pdf"
+                    download="Christian_Jay_Mandani_CV.pdf"
                     class="button-group__item button-group__item--download"
                     id="download-cv-btn"
                     title="Download CV"
@@ -1567,7 +1587,7 @@
 
       <div class="about__container container grid">
         <img
-          src="assets/images/day.png"
+          src="assets/MyImages/day.png"
           alt="Christian Jay Mandani Profile Photo"
           class="about__image"
           id="about-img"
@@ -1683,7 +1703,7 @@
                   </div>
                   <span class="qualification__subtitle">
                     <img
-                      src="assets/img/skills/logo/pngkey.com-phillies-logo-png-528919.png"
+                      src="assets/SchoolLogo/pngkey.com-phillies-logo-png-528919.png"
                       alt="Polytechnic University of the Philippines Logo"
                       class="qualification__logo"
                       loading="lazy"
@@ -1710,7 +1730,7 @@
                   </div>
                   <span class="qualification__subtitle">
                     <img
-                      src="assets/img/skills/logo/school_logo.png"
+                      src="assets/SchoolLogo/school_logo.png"
                       alt="MHNS - Camaya Campus Logo"
                       class="qualification__logo"
                       loading="lazy"
@@ -2180,13 +2200,13 @@
               <div class="project__card">
                 <div class="project__image-container">
                   <img
-                    src="assets/Projects/image.png"
-                    alt="AR HOMES POSADAS Farm Resort Reservation System"
+                    src="assets/Projects/AR Homes Posadas Farm Resort Reservation System.png"
+                    alt="AR Homes Posadas Farm Resort Reservation System"
                     class="project__image"
                     loading="lazy"
                   />
                   <a
-                    href="https://cjaayy.github.io/AR_HOMES_POSADAS_Farm_Resort_Reservation_System_Design_2/"
+                    href="assets/Projects/AR Homes Posadas Farm Resort Reservation System.png"
                     target="_blank"
                     class="project__overlay"
                   >
@@ -2198,72 +2218,23 @@
                 </div>
                 <div class="project__info">
                   <div class="project__header">
-                    <h3 class="project__title">AR HOMES POSADAS</h3>
-                    <span class="project__category">Reservation System</span>
-                  </div>
-                  <p class="project__subtitle">
-                    Farm Resort Reservation System
-                  </p>
-                  <div class="project__description">
-                    A comprehensive farm resort reservation system that enables
-                    users to book accommodations, manage reservations, and
-                    streamline the booking process for AR HOMES POSADAS.
-                  </div>
-                  <div class="project__tech">
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="assets/img/skills/html.svg"
-                        alt="html"
-                      />
-                      HTML
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="assets/img/skills/css.svg"
-                        alt="css"
-                      />
-                      CSS
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="assets/img/skills/javascript.svg"
-                        alt="javascript"
-                      />
-                      JavaScript
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="assets/img/skills/php.png"
-                        alt="php"
-                      />
-                      PHP
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="assets/img/skills/mysql.png"
-                        alt="mysql"
-                      />
-                      MySQL
-                    </span>
+                    <h3 class="project__title">
+                      AR Homes Posadas Farm Resort Reservation System
+                    </h3>
                   </div>
                   <div class="project__actions">
                     <button
                       onclick="openProjectModal(1)"
                       class="project__btn project__btn--ghost"
                     >
-                      View Details <i class="uil uil-info-circle"></i>
+                      Tech Stack <i class="uil uil-layers-alt"></i>
                     </button>
                     <a
-                      href="https://cjaayy.github.io/AR_HOMES_POSADAS_Farm_Resort_Reservation_System_Design_2/"
+                      href="assets/Projects/AR Homes Posadas Farm Resort Reservation System.png"
                       target="_blank"
-                      class="project__btn"
+                      class="project__btn project__btn--ghost"
                     >
-                      Live Demo <i class="uil uil-external-link-alt"></i>
+                      View Preview <i class="uil uil-external-link-alt"></i>
                     </a>
                   </div>
                 </div>
@@ -2275,7 +2246,7 @@
               <div class="project__card">
                 <div class="project__image-container">
                   <img
-                    src="assets/Projects/1000040631.jpg"
+                    src="assets/Projects/Screenshot_2026-10-27-17-25-45-782_com.onestopeditor.one_stop_editor.jpg"
                     alt="One Stop Editing App Preview"
                     class="project__image"
                     loading="lazy"
@@ -2284,8 +2255,7 @@
                     class="project__overlay"
                     onclick="
                       openPhoneLightbox([
-                        'assets/Projects/1000040631.jpg',
-                        'assets/Projects/1000040632.jpg',
+                        'assets/Projects/Screenshot_2026-10-27-17-25-45-782_com.onestopeditor.one_stop_editor.jpg',
                       ])
                     "
                     style="cursor: pointer"
@@ -2299,52 +2269,18 @@
                 <div class="project__info">
                   <div class="project__header">
                     <h3 class="project__title">ONE STOP EDITING APP</h3>
-                    <span class="project__category">Mobile App</span>
-                  </div>
-                  <p class="project__subtitle">Content Creation Tool</p>
-                  <div class="project__description">
-                    A mobile application for editing and creating content
-                    on-the-go. Built with Flutter, Firebase, and Dart for a
-                    smooth cross-platform experience.
-                  </div>
-                  <div class="project__tech">
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
-                        alt="flutter"
-                      />
-                      Flutter
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                        alt="firebase"
-                      />
-                      Firebase
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-                        alt="dart"
-                      />
-                      Dart
-                    </span>
                   </div>
                   <div class="project__actions">
                     <button
                       onclick="openProjectModal(2)"
                       class="project__btn project__btn--ghost"
                     >
-                      View Details <i class="uil uil-info-circle"></i>
+                      Tech Stack <i class="uil uil-layers-alt"></i>
                     </button>
                     <button
                       onclick="
                         openPhoneLightbox([
-                          'assets/Projects/1000040631.jpg',
-                          'assets/Projects/1000040632.jpg',
+                          'assets/Projects/Screenshot_2026-10-27-17-25-45-782_com.onestopeditor.one_stop_editor.jpg',
                         ])
                       "
                       class="project__btn project__btn--ghost"
@@ -2361,7 +2297,7 @@
               <div class="project__card">
                 <div class="project__image-container">
                   <img
-                    src="assets/Projects/1000042784.jpg"
+                    src="assets/Projects/Screenshot_2026-10-27-17-24-50-181_com.budgetbuddy.app.jpg"
                     alt="Budget Buddy App Preview"
                     class="project__image"
                     loading="lazy"
@@ -2370,8 +2306,7 @@
                     class="project__overlay"
                     onclick="
                       openPhoneLightbox([
-                        'assets/Projects/1000042784.jpg',
-                        'assets/Projects/1000042783.jpg',
+                        'assets/Projects/Screenshot_2026-10-27-17-24-50-181_com.budgetbuddy.app.jpg',
                       ])
                     "
                     style="cursor: pointer"
@@ -2385,52 +2320,18 @@
                 <div class="project__info">
                   <div class="project__header">
                     <h3 class="project__title">BUDGET BUDDY</h3>
-                    <span class="project__category">Mobile App</span>
-                  </div>
-                  <p class="project__subtitle">Expense Tracking</p>
-                  <div class="project__description">
-                    A budgeting application designed to help users track
-                    expenses, monitor spending habits, and stay on top of
-                    financial goals.
-                  </div>
-                  <div class="project__tech">
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
-                        alt="flutter"
-                      />
-                      Flutter
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                        alt="firebase"
-                      />
-                      Firebase
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
-                        alt="dart"
-                      />
-                      Dart
-                    </span>
                   </div>
                   <div class="project__actions">
                     <button
                       onclick="openProjectModal(3)"
                       class="project__btn project__btn--ghost"
                     >
-                      View Details <i class="uil uil-info-circle"></i>
+                      Tech Stack <i class="uil uil-layers-alt"></i>
                     </button>
                     <button
                       onclick="
                         openPhoneLightbox([
-                          'assets/Projects/1000042784.jpg',
-                          'assets/Projects/1000042783.jpg',
+                          'assets/Projects/Screenshot_2026-10-27-17-24-50-181_com.budgetbuddy.app.jpg',
                         ])
                       "
                       class="project__btn project__btn--ghost"
@@ -2466,46 +2367,13 @@
                 <div class="project__info">
                   <div class="project__header">
                     <h3 class="project__title">ISKOLAR NG MARIVELES</h3>
-                    <span class="project__category">Scholarship Portal</span>
-                  </div>
-                  <p class="project__subtitle">Municipal Web Application</p>
-                  <div class="project__description">
-                    A comprehensive digital scholarship application and
-                    management portal designed for students and municipal
-                    administrators.
-                  </div>
-                  <div class="project__tech">
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                        alt="nextjs"
-                      />
-                      Next.js
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
-                        alt="supabase"
-                      />
-                      Supabase
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                        alt="tailwindcss"
-                      />
-                      Tailwind CSS
-                    </span>
                   </div>
                   <div class="project__actions">
                     <button
                       onclick="openProjectModal(4)"
                       class="project__btn project__btn--ghost"
                     >
-                      View Details <i class="uil uil-info-circle"></i>
+                      Tech Stack <i class="uil uil-layers-alt"></i>
                     </button>
                     <a
                       href="assets/Projects/iskolar-ng-mariveles.png"
@@ -2543,45 +2411,13 @@
                 <div class="project__info">
                   <div class="project__header">
                     <h3 class="project__title">MNHS GRADES SYSTEM</h3>
-                    <span class="project__category">Academic System</span>
-                  </div>
-                  <p class="project__subtitle">School Grade Management</p>
-                  <div class="project__description">
-                    An automated academic grade recording and portal system for
-                    faculty, students, and school administrators.
-                  </div>
-                  <div class="project__tech">
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                        alt="nextjs"
-                      />
-                      Next.js
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
-                        alt="supabase"
-                      />
-                      Supabase
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                        alt="typescript"
-                      />
-                      TypeScript
-                    </span>
                   </div>
                   <div class="project__actions">
                     <button
                       onclick="openProjectModal(5)"
                       class="project__btn project__btn--ghost"
                     >
-                      View Details <i class="uil uil-info-circle"></i>
+                      Tech Stack <i class="uil uil-layers-alt"></i>
                     </button>
                     <a
                       href="assets/Projects/mnhs-camaya-campus-grades-management-system copy.png"
@@ -2619,45 +2455,13 @@
                 <div class="project__info">
                   <div class="project__header">
                     <h3 class="project__title">PUP BATAAN UGNAY</h3>
-                    <span class="project__category">Institutional Portal</span>
-                  </div>
-                  <p class="project__subtitle">Campus Community Platform</p>
-                  <div class="project__description">
-                    An institutional community portal and communication platform
-                    for campus updates, events, and student engagement.
-                  </div>
-                  <div class="project__tech">
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                        alt="nextjs"
-                      />
-                      Next.js
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
-                        alt="supabase"
-                      />
-                      Supabase
-                    </span>
-                    <span class="project__tech-item">
-                      <img
-                        class="project__tech-icon"
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                        alt="tailwindcss"
-                      />
-                      Tailwind CSS
-                    </span>
                   </div>
                   <div class="project__actions">
                     <button
                       onclick="openProjectModal(6)"
                       class="project__btn project__btn--ghost"
                     >
-                      View Details <i class="uil uil-info-circle"></i>
+                      Tech Stack <i class="uil uil-layers-alt"></i>
                     </button>
                     <a
                       href="assets/Projects/pup-bataanu-ugnay.png"
@@ -2666,6 +2470,101 @@
                     >
                       View Preview <i class="uil uil-external-link-alt"></i>
                     </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 7 - PUP F.O.C.U.S -->
+            <div class="projects__content swiper-slide">
+              <div class="project__card">
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/Screenshot 2026-10-27 173907.png"
+                    alt="PUP F.O.C.U.S"
+                    class="project__image"
+                    loading="lazy"
+                  />
+                  <a
+                    href="assets/Projects/Screenshot 2026-10-27 173907.png"
+                    target="_blank"
+                    class="project__overlay"
+                  >
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="project__info">
+                  <div class="project__header">
+                    <h3 class="project__title">PUP F.O.C.U.S</h3>
+                  </div>
+                  <div class="project__actions">
+                    <button
+                      onclick="openProjectModal(7)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      Tech Stack <i class="uil uil-layers-alt"></i>
+                    </button>
+                    <a
+                      href="assets/Projects/Screenshot 2026-10-27 173907.png"
+                      target="_blank"
+                      class="project__btn project__btn--ghost"
+                    >
+                      View Preview <i class="uil uil-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 8 - PASSKEEP -->
+            <div class="projects__content swiper-slide">
+              <div class="project__card">
+                <div class="project__image-container">
+                  <img
+                    src="assets/Projects/Screenshot_2026-10-27-17-25-24-205_com.passkeep.passkeep.jpg"
+                    alt="PassKeep App Preview"
+                    class="project__image"
+                    loading="lazy"
+                  />
+                  <div
+                    class="project__overlay"
+                    onclick="
+                      openPhoneLightbox([
+                        'assets/Projects/Screenshot_2026-10-27-17-25-24-205_com.passkeep.passkeep.jpg',
+                      ])
+                    "
+                    style="cursor: pointer"
+                  >
+                    <div class="project__overlay-content">
+                      <i class="uil uil-eye"></i>
+                      <span>Preview</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project__info">
+                  <div class="project__header">
+                    <h3 class="project__title">PASSKEEP</h3>
+                  </div>
+                  <div class="project__actions">
+                    <button
+                      onclick="openProjectModal(8)"
+                      class="project__btn project__btn--ghost"
+                    >
+                      Tech Stack <i class="uil uil-layers-alt"></i>
+                    </button>
+                    <button
+                      onclick="
+                        openPhoneLightbox([
+                          'assets/Projects/Screenshot_2026-10-27-17-25-24-205_com.passkeep.passkeep.jpg',
+                        ])
+                      "
+                      class="project__btn project__btn--ghost"
+                    >
+                      Mobile Preview <i class="uil uil-mobile-android"></i>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2711,19 +2610,23 @@
               <ul class="services__modal-services grid">
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Static Sites with HTML/CSS/JavaScript</p>
+                  <p>Full-Stack Web Apps with Next.js, React & TypeScript</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Fullstack Systems with PHP & Laravel</p>
+                  <p>Backend Systems with PHP, Laravel & Node.js</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Database Integration with MySQL</p>
+                  <p>Database & Auth with Supabase, Firebase, MySQL & MongoDB</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>API Development & Integration</p>
+                  <p>Responsive Styling with Tailwind CSS & Bootstrap</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="uil uil-check-circle services__modal-icon"></i>
+                  <p>Serverless & Edge Deployment on Vercel</p>
                 </li>
               </ul>
             </div>
@@ -2733,7 +2636,7 @@
         <!--==================== SERVICE 2 ====================-->
         <div class="services__content">
           <div>
-            <h3 class="services__title">Software<br />Development</h3>
+            <h3 class="services__title">Mobile App<br />Development</h3>
           </div>
 
           <span
@@ -2744,24 +2647,24 @@
 
           <div class="services__modal">
             <div class="services__modal-content">
-              <h4 class="services__modal-title">Software Development</h4>
+              <h4 class="services__modal-title">Mobile App Development</h4>
               <i class="uil uil-times services__modal-close"></i>
               <ul class="services__modal-services grid">
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Desktop Applications</p>
+                  <p>Cross-Platform Apps with Flutter & Dart</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>System Development with Java & Python</p>
+                  <p>Mobile Development with React Native</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Algorithm Design & Optimization</p>
+                  <p>Android & iOS Target Platform Builds</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Database Management Systems</p>
+                  <p>Cloud Sync, Auth & Storage with Supabase & Firebase</p>
                 </li>
               </ul>
             </div>
@@ -2771,7 +2674,7 @@
         <!--==================== SERVICE 3 ====================-->
         <div class="services__content">
           <div>
-            <h3 class="services__title">UI/UX<br />Design</h3>
+            <h3 class="services__title">UI/UX &<br />IT Support</h3>
           </div>
 
           <span
@@ -2782,24 +2685,24 @@
 
           <div class="services__modal">
             <div class="services__modal-content">
-              <h4 class="services__modal-title">UI/UX Design</h4>
+              <h4 class="services__modal-title">UI/UX Design & IT Support</h4>
               <i class="uil uil-times services__modal-close"></i>
               <ul class="services__modal-services grid">
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>User Interface Design</p>
+                  <p>Modern & Clean Web/Mobile UI Design</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Responsive Layouts</p>
+                  <p>Responsive & Mobile-First User Experiences</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Modern & Clean Aesthetics</p>
+                  <p>Version Control & Workflow with Git & GitHub</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>User Experience Optimization</p>
+                  <p>PC, Laptop & Mobile Troubleshooting & Repair</p>
                 </li>
               </ul>
             </div>
@@ -3224,7 +3127,8 @@
     <!-- ===================== SHOW/HIDE LOADER ==================== -->
     <script>
       window.onload = function () {
-        document.getElementById("loading").style.display = "none";
+        const loader = document.getElementById("loading");
+        if (loader) loader.style.display = "none";
       };
     </script>
 
@@ -3269,20 +3173,14 @@
         <i class="uil uil-times"></i>
       </button>
       <img
-        src="assets/Projects/1000040631.jpg"
+        src="assets/Projects/Screenshot_2026-10-27-17-25-45-782_com.onestopeditor.one_stop_editor.jpg"
         alt="One Stop Editing App - Screen 1"
-        class="project__lightbox-img"
-        loading="lazy"
-      />
-      <img
-        src="assets/Projects/1000040632.jpg"
-        alt="One Stop Editing App - Screen 2"
         class="project__lightbox-img"
         loading="lazy"
       />
     </div>
 
-    <!--==================== PROJECT DETAIL MODALS ====================-->
+    <!--==================== PROJECT TECH STACK MODALS ====================-->
     <!-- Modal 1 - AR HOMES POSADAS -->
     <div
       class="project__modal"
@@ -3294,35 +3192,12 @@
           class="uil uil-times project__modal-close"
           onclick="closeProjectModalDirect(1)"
         ></i>
-        <h3 class="project__modal-title">AR HOMES POSADAS</h3>
-        <p class="project__modal-subtitle">Farm Resort Reservation System</p>
+        <h3 class="project__modal-title">
+          AR Homes Posadas Farm Resort Reservation System
+        </h3>
+        <p class="project__modal-subtitle">Tech Stack</p>
 
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Overview</h4>
-          <p class="project__modal-text">
-            A comprehensive farm resort reservation system that enables users to
-            book accommodations, check real-time room availability, and
-            streamline reservation management for AR HOMES POSADAS.
-          </p>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Core Features</h4>
-          <ul class="project__modal-list">
-            <li>Online accommodation booking & reservation engine.</li>
-            <li>
-              Real-time room availability calendar & inventory management.
-            </li>
-            <li>
-              Administrative dashboard for managing guest reservations &
-              payments.
-            </li>
-            <li>Automated email/SMS reservation confirmation system.</li>
-          </ul>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Tech Stack</h4>
+        <div class="project__modal-section" style="margin-bottom: 0">
           <div class="project__modal-tech">
             <span class="project__tech-item"
               ><img
@@ -3330,7 +3205,7 @@
                 src="assets/img/skills/html.svg"
                 alt="html"
               />
-              HTML5</span
+              HTML (Structure / Semantic Markup)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3338,7 +3213,7 @@
                 src="assets/img/skills/css.svg"
                 alt="css"
               />
-              CSS3</span
+              CSS (Styling / Layout Design)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3346,7 +3221,7 @@
                 src="assets/img/skills/javascript.svg"
                 alt="javascript"
               />
-              JavaScript</span
+              JavaScript (Client-Side Interactivity)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3354,27 +3229,17 @@
                 src="assets/img/skills/php.png"
                 alt="php"
               />
-              PHP</span
+              PHP (Server-Side Scripting / Backend Logic)</span
             >
             <span class="project__tech-item"
               ><img
                 class="project__tech-icon"
                 src="assets/img/skills/mysql.png"
-                alt="mysql"
+                alt="xampp"
               />
-              MySQL</span
+              XAMPP (Local Development Environment / Apache & MySQL)</span
             >
           </div>
-        </div>
-
-        <div class="project__modal-actions">
-          <a
-            href="https://cjaayy.github.io/AR_HOMES_POSADAS_Farm_Resort_Reservation_System_Design_2/"
-            target="_blank"
-            class="project__btn"
-          >
-            Live Demo <i class="uil uil-external-link-alt"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -3391,31 +3256,9 @@
           onclick="closeProjectModalDirect(2)"
         ></i>
         <h3 class="project__modal-title">ONE STOP EDITING APP</h3>
-        <p class="project__modal-subtitle">Mobile Content Creation Tool</p>
+        <p class="project__modal-subtitle">Tech Stack</p>
 
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Overview</h4>
-          <p class="project__modal-text">
-            A mobile application for editing and creating content on-the-go.
-            Built with Flutter, Firebase, and Dart to deliver a fast,
-            cross-platform media editing experience.
-          </p>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Core Features</h4>
-          <ul class="project__modal-list">
-            <li>Cross-platform photo & video editing toolset.</li>
-            <li>Firebase authentication and cloud asset storage.</li>
-            <li>Offline media processing with instant real-time preview.</li>
-            <li>
-              Preset filters, custom text overlays, and direct social export.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Tech Stack</h4>
+        <div class="project__modal-section" style="margin-bottom: 0">
           <div class="project__modal-tech">
             <span class="project__tech-item"
               ><img
@@ -3423,15 +3266,7 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
                 alt="flutter"
               />
-              Flutter</span
-            >
-            <span class="project__tech-item"
-              ><img
-                class="project__tech-icon"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                alt="firebase"
-              />
-              Firebase</span
+              Flutter (Cross-Platform UI / Mobile SDK)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3439,24 +3274,25 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
                 alt="dart"
               />
-              Dart</span
+              Dart (Language / Type Safety)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase (Postgres / Auth / Realtime / Storage)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
+                alt="android and ios"
+              />
+              Android & iOS (Target Platforms)</span
             >
           </div>
-        </div>
-
-        <div class="project__modal-actions">
-          <button
-            onclick="
-              closeProjectModalDirect(2);
-              openPhoneLightbox([
-                'assets/Projects/1000040631.jpg',
-                'assets/Projects/1000040632.jpg',
-              ]);
-            "
-            class="project__btn project__btn--ghost"
-          >
-            Mobile Screenshots <i class="uil uil-mobile-android"></i>
-          </button>
         </div>
       </div>
     </div>
@@ -3473,36 +3309,9 @@
           onclick="closeProjectModalDirect(3)"
         ></i>
         <h3 class="project__modal-title">BUDGET BUDDY</h3>
-        <p class="project__modal-subtitle">
-          Expense Tracking & Financial Assistant
-        </p>
+        <p class="project__modal-subtitle">Tech Stack</p>
 
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Overview</h4>
-          <p class="project__modal-text">
-            A mobile budgeting application engineered to empower users to record
-            expenses, monitor spending habits, set financial targets, and sync
-            data securely to the cloud.
-          </p>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Core Features</h4>
-          <ul class="project__modal-list">
-            <li>
-              Daily expense and income logging with customizable categories.
-            </li>
-            <li>Firebase Cloud Firestore sync across multiple user devices.</li>
-            <li>
-              Visual spending charts, category breakdown, and monthly budget
-              targets.
-            </li>
-            <li>Secure user authentication and automated expense reports.</li>
-          </ul>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Tech Stack</h4>
+        <div class="project__modal-section" style="margin-bottom: 0">
           <div class="project__modal-tech">
             <span class="project__tech-item"
               ><img
@@ -3510,15 +3319,7 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
                 alt="flutter"
               />
-              Flutter</span
-            >
-            <span class="project__tech-item"
-              ><img
-                class="project__tech-icon"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                alt="firebase"
-              />
-              Firebase</span
+              Flutter (Cross-Platform UI / Mobile SDK)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3526,24 +3327,25 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
                 alt="dart"
               />
-              Dart</span
+              Dart (Language / Type Safety)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase (Postgres / Auth / Realtime / Storage)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
+                alt="android and ios"
+              />
+              Android & iOS (Target Platforms)</span
             >
           </div>
-        </div>
-
-        <div class="project__modal-actions">
-          <button
-            onclick="
-              closeProjectModalDirect(3);
-              openPhoneLightbox([
-                'assets/Projects/1000042784.jpg',
-                'assets/Projects/1000042783.jpg',
-              ]);
-            "
-            class="project__btn project__btn--ghost"
-          >
-            Mobile Screenshots <i class="uil uil-mobile-android"></i>
-          </button>
         </div>
       </div>
     </div>
@@ -3560,36 +3362,9 @@
           onclick="closeProjectModalDirect(4)"
         ></i>
         <h3 class="project__modal-title">ISKOLAR NG MARIVELES</h3>
-        <p class="project__modal-subtitle">Municipal Scholarship Portal</p>
+        <p class="project__modal-subtitle">Tech Stack</p>
 
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Overview</h4>
-          <p class="project__modal-text">
-            A comprehensive digital scholarship application and management
-            portal designed for student applicants and municipal education
-            administrators.
-          </p>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Core Features</h4>
-          <ul class="project__modal-list">
-            <li>
-              Online student application submission & document upload vault.
-            </li>
-            <li>Supabase database backend & storage bucket integration.</li>
-            <li>
-              Admin verification queue for applicant grading & document
-              approval.
-            </li>
-            <li>
-              Allowance disbursement tracking & automated notification portal.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Tech Stack</h4>
+        <div class="project__modal-section" style="margin-bottom: 0">
           <div class="project__modal-tech">
             <span class="project__tech-item"
               ><img
@@ -3597,7 +3372,7 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
                 alt="nextjs"
               />
-              Next.js</span
+              Next.js (App Router / React)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3605,7 +3380,23 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
                 alt="supabase"
               />
-              Supabase</span
+              Supabase (Postgres / Auth / Realtime)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                alt="vercel"
+              />
+              Vercel (Edge Hosting / Serverless)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="typescript"
+              />
+              TypeScript (Type Safety)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3613,19 +3404,9 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
                 alt="tailwindcss"
               />
-              Tailwind CSS</span
+              Tailwind CSS (UI Styling)</span
             >
           </div>
-        </div>
-
-        <div class="project__modal-actions">
-          <a
-            href="assets/Projects/iskolar-ng-mariveles.png"
-            target="_blank"
-            class="project__btn project__btn--ghost"
-          >
-            View Preview <i class="uil uil-external-link-alt"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -3642,42 +3423,9 @@
           onclick="closeProjectModalDirect(5)"
         ></i>
         <h3 class="project__modal-title">MNHS GRADES SYSTEM</h3>
-        <p class="project__modal-subtitle">
-          Academic Grade Recording & School Portal
-        </p>
+        <p class="project__modal-subtitle">Tech Stack</p>
 
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Overview</h4>
-          <p class="project__modal-text">
-            An automated academic grade recording and portal system designed for
-            faculty members, students, and school administrators at MNHS Camaya
-            Campus.
-          </p>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Core Features</h4>
-          <ul class="project__modal-list">
-            <li>
-              Automated quarterly grade computation conforming to DepEd grading
-              rubrics.
-            </li>
-            <li>
-              Teacher grade portal with spreadsheet batch upload & PDF report
-              card generator.
-            </li>
-            <li>
-              Secure student & parent portal to view quarterly grades &
-              attendance.
-            </li>
-            <li>
-              Role-based access control backed by Supabase Auth & RLS policies.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Tech Stack</h4>
+        <div class="project__modal-section" style="margin-bottom: 0">
           <div class="project__modal-tech">
             <span class="project__tech-item"
               ><img
@@ -3685,7 +3433,7 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
                 alt="nextjs"
               />
-              Next.js</span
+              Next.js (App Router / React)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3693,7 +3441,15 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
                 alt="supabase"
               />
-              Supabase</span
+              Supabase (Postgres / Auth / Realtime)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                alt="vercel"
+              />
+              Vercel (Edge Hosting / Serverless)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3701,19 +3457,17 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
                 alt="typescript"
               />
-              TypeScript</span
+              TypeScript (Type Safety)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                alt="tailwindcss"
+              />
+              Tailwind CSS (UI Styling)</span
             >
           </div>
-        </div>
-
-        <div class="project__modal-actions">
-          <a
-            href="assets/Projects/mnhs-camaya-campus-grades-management-system copy.png"
-            target="_blank"
-            class="project__btn project__btn--ghost"
-          >
-            View Preview <i class="uil uil-external-link-alt"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -3730,36 +3484,9 @@
           onclick="closeProjectModalDirect(6)"
         ></i>
         <h3 class="project__modal-title">PUP BATAAN UGNAY</h3>
-        <p class="project__modal-subtitle">
-          Institutional Community & Event Portal
-        </p>
+        <p class="project__modal-subtitle">Tech Stack</p>
 
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Overview</h4>
-          <p class="project__modal-text">
-            An institutional community portal and communication platform built
-            to facilitate university news broadcasts, campus event
-            announcements, student organization activities, and official
-            updates.
-          </p>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Core Features</h4>
-          <ul class="project__modal-list">
-            <li>
-              Centralized campus news feed & announcement broadcasting engine.
-            </li>
-            <li>Interactive event calendar with student RSVP and reminders.</li>
-            <li>Student organization directory & publication posting board.</li>
-            <li>
-              Supabase real-time notifications for urgent campus advisories.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project__modal-section">
-          <h4 class="project__modal-heading">Tech Stack</h4>
+        <div class="project__modal-section" style="margin-bottom: 0">
           <div class="project__modal-tech">
             <span class="project__tech-item"
               ><img
@@ -3767,7 +3494,7 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
                 alt="nextjs"
               />
-              Next.js</span
+              Next.js (App Router / React)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3775,7 +3502,23 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
                 alt="supabase"
               />
-              Supabase</span
+              Supabase (Postgres / Auth / Realtime)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                alt="vercel"
+              />
+              Vercel (Edge Hosting / Serverless)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="typescript"
+              />
+              TypeScript (Type Safety)</span
             >
             <span class="project__tech-item"
               ><img
@@ -3783,19 +3526,123 @@
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
                 alt="tailwindcss"
               />
-              Tailwind CSS</span
+              Tailwind CSS (UI Styling)</span
             >
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="project__modal-actions">
-          <a
-            href="assets/Projects/pup-bataanu-ugnay.png"
-            target="_blank"
-            class="project__btn project__btn--ghost"
-          >
-            View Preview <i class="uil uil-external-link-alt"></i>
-          </a>
+    <!-- Modal 7 - PUP F.O.C.U.S -->
+    <div
+      class="project__modal"
+      id="projectModal-7"
+      onclick="closeProjectModal(event, 7)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(7)"
+        ></i>
+        <h3 class="project__modal-title">PUP F.O.C.U.S</h3>
+        <p class="project__modal-subtitle">Tech Stack</p>
+
+        <div class="project__modal-section" style="margin-bottom: 0">
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="nextjs"
+              />
+              Next.js (App Router / React)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase (Postgres / Auth / Realtime)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                alt="vercel"
+              />
+              Vercel (Edge Hosting / Serverless)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="typescript"
+              />
+              TypeScript (Type Safety)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                alt="tailwindcss"
+              />
+              Tailwind CSS (UI Styling)</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 8 - PASSKEEP -->
+    <div
+      class="project__modal"
+      id="projectModal-8"
+      onclick="closeProjectModal(event, 8)"
+    >
+      <div class="project__modal-content">
+        <i
+          class="uil uil-times project__modal-close"
+          onclick="closeProjectModalDirect(8)"
+        ></i>
+        <h3 class="project__modal-title">PASSKEEP</h3>
+        <p class="project__modal-subtitle">Tech Stack</p>
+
+        <div class="project__modal-section" style="margin-bottom: 0">
+          <div class="project__modal-tech">
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                alt="flutter"
+              />
+              Flutter (Cross-Platform UI / Mobile SDK)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                alt="dart"
+              />
+              Dart (Language / Type Safety)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt="supabase"
+              />
+              Supabase (Postgres / Auth / Realtime / Storage)</span
+            >
+            <span class="project__tech-item"
+              ><img
+                class="project__tech-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
+                alt="android and ios"
+              />
+              Android & iOS (Target Platforms)</span
+            >
+          </div>
         </div>
       </div>
     </div>

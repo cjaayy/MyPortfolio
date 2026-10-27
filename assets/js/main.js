@@ -96,7 +96,12 @@ let projectsSwiper = new Swiper(".projects__slider-container", {
   grabCursor: true,
   spaceBetween: 30,
   slidesPerView: 1,
-  centeredSlides: true,
+  centeredSlides: false,
+  noSwiping: true,
+  noSwipingSelector: "button, a, .project__btn, .project__actions, .project__overlay",
+  preventClicks: false,
+  preventClicksPropagation: false,
+  touchStartPreventDefault: false,
   navigation: {
     nextEl: ".projects__slider-container .swiper-button-next",
     prevEl: ".projects__slider-container .swiper-button-prev",
@@ -109,8 +114,6 @@ let projectsSwiper = new Swiper(".projects__slider-container", {
   effect: "slide",
   speed: 800,
   watchOverflow: true,
-  observer: true,
-  observeParents: true,
   keyboard: {
     enabled: true,
     onlyInViewport: true,
@@ -128,7 +131,12 @@ let certificatesSwiper = new Swiper(".certificates__slider-container", {
   grabCursor: true,
   spaceBetween: 30,
   slidesPerView: 1,
-  centeredSlides: true,
+  centeredSlides: false,
+  noSwiping: true,
+  noSwipingSelector: "button, a, .certificate__btn, .certificate__actions",
+  preventClicks: false,
+  preventClicksPropagation: false,
+  touchStartPreventDefault: false,
   navigation: {
     nextEl: ".certificates__slider-container .swiper-button-next",
     prevEl: ".certificates__slider-container .swiper-button-prev",
@@ -141,8 +149,6 @@ let certificatesSwiper = new Swiper(".certificates__slider-container", {
   effect: "slide",
   speed: 700,
   watchOverflow: true,
-  observer: true,
-  observeParents: true,
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
@@ -477,18 +483,18 @@ const aboutImg = document.getElementById("about-img");
 function setHomeImage(theme) {
   if (!homeImg) return;
   if (theme === "dark") {
-    homeImg.src = "assets/images/CJay.png";
+    homeImg.src = "assets/MyImages/CJay.png";
   } else {
-    homeImg.src = "assets/images/image1.jpg";
+    homeImg.src = "assets/MyImages/image1.jpg";
   }
 }
 
 function setAboutImage(theme) {
   if (!aboutImg) return;
   if (theme === "dark") {
-    aboutImg.src = "assets/images/night.png";
+    aboutImg.src = "assets/MyImages/night.png";
   } else {
-    aboutImg.src = "assets/images/day.png";
+    aboutImg.src = "assets/MyImages/day.png";
   }
 }
 
@@ -505,6 +511,23 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
   setHomeImage(getCurrentTheme());
   setAboutImage(getCurrentTheme());
+});
+
+/*==================== PREVENT SWIPER SLIDE ON BUTTON CLICK ====================*/
+const projectInteractiveEls = document.querySelectorAll(
+  ".project__btn, .project__actions, .project__overlay, .certificate__btn",
+);
+
+projectInteractiveEls.forEach((el) => {
+  ["touchstart", "touchend", "mousedown", "pointerdown"].forEach((evt) => {
+    el.addEventListener(
+      evt,
+      (e) => {
+        e.stopPropagation();
+      },
+      { passive: true },
+    );
+  });
 });
 
 /*==================== MOBILE PROJECT TOGGLES ====================*/
